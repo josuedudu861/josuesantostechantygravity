@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css?v=20261122_06">
+  <link rel="stylesheet" href="style.css?v=20261122_07">
 </head>
 <body class="theme-dark">
 
@@ -494,34 +494,16 @@
       <div class="section-container">
         
         <div class="about-director-card">
-          <!-- Coluna Vídeo Oficial do Diretor & Foto com Seletor Interativo -->
+          <!-- Coluna Vídeo Oficial do Diretor (Substitui foto de referência) -->
           <div class="director-visual">
             <div class="director-img-container">
-              <!-- Seletor de Mídia (Vídeo / Foto) -->
-              <div class="director-media-switcher">
-                <button type="button" class="media-tab-btn active" data-media="video" aria-label="Ver vídeo do diretor">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                  <span>VÍDEO</span>
-                </button>
-                <button type="button" class="media-tab-btn" data-media="photo" aria-label="Ver foto do diretor">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                  <span>FOTO</span>
-                </button>
-              </div>
-
-              <!-- Vídeo do Diretor em Ação -->
+              <!-- Vídeo Oficial do Diretor em Alta Definição -->
               <video id="authorDirectorVideo" 
-                     class="director-media-elem director-video active" 
+                     class="director-video" 
                      autoplay loop muted playsinline 
                      poster="assets/josue-photo.jpg">
-                <source src="assets/director-video.mp4" type="video/mp4">
+                <source src="assets/director-video.mp4?v=20261122_07" type="video/mp4">
               </video>
-
-              <!-- Foto Oficial do Diretor em Alta Definição -->
-              <img id="authorDirectorPhoto" 
-                   src="assets/josue-photo.jpg" 
-                   alt="Josué Santos - Diretor Criativo de IA" 
-                   class="director-media-elem director-img">
               
               <!-- Badge do Diretor -->
               <div class="director-badge-corner">
@@ -811,6 +793,6 @@
 
   <!-- Scripts -->
   <script src="background.js?v=20261122_02"></script>
-  <script src="app.js?v=20261122_02"></script>
+  <script src="app.js?v=20261122_07"></script>
 </body>
 </html>

@@ -168,45 +168,16 @@
           btn.setAttribute('aria-label', 'Ativar áudio do vídeo');
         }
       });
+      // Permite clicar diretamente no vídeo para ativar/desativar áudio
+      video.addEventListener('click', () => {
+        btn.click();
+      });
+      video.style.cursor = 'pointer';
     }
   }
 
   setupVideoAudioToggle('audioToggleHero', 'heroVideo');
   setupVideoAudioToggle('audioToggleAuthor', 'authorDirectorVideo');
   setupVideoAudioToggle('audioToggleDirector', 'directorVideo');
-
-  // 5. SELETOR DE MÍDIA DO CARD DO AUTOR (VÍDEO / FOTO)
-  const mediaTabs = document.querySelectorAll('.director-media-switcher .media-tab-btn');
-  const authorVideo = document.getElementById('authorDirectorVideo');
-  const authorPhoto = document.getElementById('authorDirectorPhoto');
-  const audioToggleAuthor = document.getElementById('audioToggleAuthor');
-
-  if (mediaTabs.length && authorVideo && authorPhoto) {
-    mediaTabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
-        const target = tab.dataset.media;
-        mediaTabs.forEach((t) => t.classList.remove('active'));
-        tab.classList.add('active');
-
-        if (target === 'video') {
-          authorVideo.classList.add('active');
-          authorPhoto.classList.remove('active');
-          if (audioToggleAuthor) audioToggleAuthor.style.display = 'inline-flex';
-          authorVideo.play().catch(() => {});
-        } else {
-          authorPhoto.classList.add('active');
-          authorVideo.classList.remove('active');
-          authorVideo.pause();
-          authorVideo.muted = true;
-          if (audioToggleAuthor) {
-            audioToggleAuthor.style.display = 'none';
-            audioToggleAuthor.classList.remove('is-playing-audio');
-            const stateEl = audioToggleAuthor.querySelector('.audio-state');
-            if (stateEl) stateEl.textContent = 'DESATIVADO';
-          }
-        }
-      });
-    });
-  }
 
 })();
