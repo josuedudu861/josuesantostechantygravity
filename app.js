@@ -131,29 +131,47 @@
     });
   });
 
-  // 4. CONTROLE DE ÁUDIO DO VÍDEO DO DIRETOR
-  const audioBtn = document.getElementById('audioToggleDirector');
-  const directorVideo = document.getElementById('directorVideo');
+  // 4. CONTROLE DE ÁUDIO PARA TODOS OS VÍDEOS DO SITE
+  function setupVideoAudioToggle(btnId, videoId) {
+    const btn = document.getElementById(btnId);
+    const video = document.getElementById(videoId);
 
-  if (audioBtn && directorVideo) {
-    audioBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const stateEl = audioBtn.querySelector('.audio-state');
+    if (btn && video) {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const stateEl = btn.querySelector('.audio-state');
 
-      if (directorVideo.muted) {
-        directorVideo.muted = false;
-        directorVideo.volume = 1.0;
-        directorVideo.play().catch(() => {});
-        audioBtn.classList.add('is-playing-audio');
-        if (stateEl) stateEl.textContent = 'ATIVADO';
-        audioBtn.setAttribute('aria-label', 'Desativar áudio do vídeo');
-      } else {
-        directorVideo.muted = true;
-        audioBtn.classList.remove('is-playing-audio');
-        if (stateEl) stateEl.textContent = 'DESATIVADO';
-        audioBtn.setAttribute('aria-label', 'Ativar áudio do vídeo');
-      }
-    });
+        if (video.muted) {
+          // Mutar os outros vídeos para evitar áudios sobrepostos
+          document.querySelectorAll('video').forEach((v) => {
+            if (v !== video) v.muted = true;
+          });
+          document.querySelectorAll('.video-audio-toggle').forEach((b) => {
+            if (b !== btn) {
+              b.classList.remove('is-playing-audio');
+              const s = b.querySelector('.audio-state');
+              if (s) s.textContent = 'DESATIVADO';
+              b.setAttribute('aria-label', 'Ativar áudio do vídeo');
+            }
+          });
+
+          video.muted = false;
+          video.volume = 1.0;
+          video.play().catch(() => {});
+          btn.classList.add('is-playing-audio');
+          if (stateEl) stateEl.textContent = 'ATIVADO';
+          btn.setAttribute('aria-label', 'Desativar áudio do vídeo');
+        } else {
+          video.muted = true;
+          btn.classList.remove('is-playing-audio');
+          if (stateEl) stateEl.textContent = 'DESATIVADO';
+          btn.setAttribute('aria-label', 'Ativar áudio do vídeo');
+        }
+      });
+    }
   }
+
+  setupVideoAudioToggle('audioToggleHero', 'heroVideo');
+  setupVideoAudioToggle('audioToggleDirector', 'directorVideo');
 
 })();

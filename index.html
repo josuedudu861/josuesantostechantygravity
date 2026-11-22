@@ -147,7 +147,7 @@
           <div class="hero-card-frame">
             <!-- Vídeo de capa com visual cinematográfico futurista -->
             <div class="hero-image-container hero-video-container">
-              <video class="hero-main-video" autoplay loop muted playsinline poster="assets/hero-poster.jpg">
+              <video id="heroVideo" class="hero-main-video" autoplay loop muted playsinline poster="assets/hero-poster.jpg">
                 <source src="assets/hero-video.mp4" type="video/mp4">
               </video>
               <div class="hero-gradient-overlay"></div>
@@ -158,6 +158,27 @@
                 <div class="reticle-line v-line"></div>
                 <div class="reticle-circle"></div>
               </div>
+
+              <!-- Controle de Áudio Flutuante Hero -->
+              <button type="button" id="audioToggleHero" class="video-audio-toggle hero-audio-toggle" aria-label="Ativar áudio do vídeo" title="Ativar / Desativar Áudio">
+                <span class="audio-pulse-indicator"></span>
+                <span class="audio-icon-wrap">
+                  <!-- Ícone Som Desativado -->
+                  <svg class="icon-sound-off" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                  </svg>
+                  <!-- Ícone Som Ativado -->
+                  <svg class="icon-sound-on" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                  </svg>
+                </span>
+                <span class="audio-text-label">ÁUDIO: <b class="audio-state">DESATIVADO</b></span>
+              </button>
+
               <!-- Badge discreto de Live Feed no rodapé interno do vídeo -->
               <div class="hud-widget widget-status">
                 <span class="hud-live-tag">LIVE</span>
