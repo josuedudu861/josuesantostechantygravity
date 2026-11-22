@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261122_02">
 </head>
 <body class="theme-dark">
 
@@ -494,17 +494,58 @@
       <div class="section-container">
         
         <div class="about-director-card">
-          <!-- Coluna Foto Oficial do Diretor -->
+          <!-- Coluna Visual: Vídeo Oficial & Foto com Seletor Interativo -->
           <div class="director-visual">
             <div class="director-img-container">
-              <img src="assets/josue-photo.jpg" 
+              <!-- Seletor de Mídia (Vídeo / Foto) -->
+              <div class="director-media-switcher">
+                <button type="button" class="media-tab-btn active" data-media="video" aria-label="Ver vídeo do diretor">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  <span>VÍDEO</span>
+                </button>
+                <button type="button" class="media-tab-btn" data-media="photo" aria-label="Ver foto do diretor">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  <span>FOTO</span>
+                </button>
+              </div>
+
+              <!-- Vídeo do Diretor em Ação -->
+              <video id="authorDirectorVideo" 
+                     class="director-media-elem director-video active" 
+                     autoplay loop muted playsinline 
+                     poster="assets/josue-photo.jpg">
+                <source src="assets/director-video.mp4" type="video/mp4">
+              </video>
+
+              <!-- Foto Oficial do Diretor em Alta Definição -->
+              <img id="authorDirectorPhoto" 
+                   src="assets/josue-photo.jpg" 
                    alt="Josué Santos - Diretor Criativo de IA" 
-                   class="director-img">
+                   class="director-media-elem director-img">
               
+              <!-- Badge do Diretor -->
               <div class="director-badge-corner">
                 <span class="badge-dot"></span>
                 <span>CHIEF CREATIVE AI</span>
               </div>
+
+              <!-- Controle de Áudio Flutuante para o Vídeo do Autor -->
+              <button type="button" id="audioToggleAuthor" class="video-audio-toggle" aria-label="Ativar áudio do vídeo" title="Ativar / Desativar Áudio">
+                <span class="audio-pulse-indicator"></span>
+                <span class="audio-icon-wrap">
+                  <svg class="icon-sound-off" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                  </svg>
+                  <svg class="icon-sound-on" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                  </svg>
+                </span>
+                <span class="audio-text-label">ÁUDIO: <b class="audio-state">DESATIVADO</b></span>
+              </button>
             </div>
           </div>
 
@@ -769,7 +810,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="background.js"></script>
-  <script src="app.js"></script>
+  <script src="background.js?v=20261122_02"></script>
+  <script src="app.js?v=20261122_02"></script>
 </body>
 </html>
