@@ -1135,6 +1135,86 @@ button, input, select, textarea {
   border-radius: 50%;
 }
 
+/* BOTÃO DE CONTROLE DE ÁUDIO FUTURISTA */
+.video-audio-toggle {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 15;
+  background: rgba(10, 10, 14, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.8px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+  transition: var(--transition-smooth);
+}
+
+.video-audio-toggle:hover {
+  background: rgba(22, 22, 28, 0.95);
+  border-color: rgba(255, 42, 42, 0.5);
+  box-shadow: 0 0 20px rgba(255, 42, 42, 0.3);
+  transform: translateY(-1px);
+}
+
+.audio-pulse-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--text-dim);
+  transition: var(--transition-fast);
+}
+
+.audio-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-audio-toggle .icon-sound-on {
+  display: none;
+}
+
+.video-audio-toggle .icon-sound-off {
+  display: block;
+  color: var(--text-muted);
+}
+
+/* Estado Ativo (Com Áudio) */
+.video-audio-toggle.is-playing-audio {
+  border-color: var(--accent-red);
+  background: rgba(255, 42, 42, 0.22);
+  box-shadow: 0 0 24px rgba(255, 42, 42, 0.45);
+}
+
+.video-audio-toggle.is-playing-audio .audio-pulse-indicator {
+  background-color: var(--accent-red);
+  box-shadow: 0 0 8px var(--accent-red);
+  animation: pulseDot 1.4s infinite ease-in-out;
+}
+
+.video-audio-toggle.is-playing-audio .icon-sound-off {
+  display: none;
+}
+
+.video-audio-toggle.is-playing-audio .icon-sound-on {
+  display: block;
+  color: #fff;
+}
+
+.video-audio-toggle.is-playing-audio .audio-state {
+  color: var(--accent-red);
+}
+
 .director-name {
   font-family: var(--font-heading);
   font-size: 2.4rem;

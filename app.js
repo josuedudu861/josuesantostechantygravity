@@ -131,4 +131,29 @@
     });
   });
 
+  // 4. CONTROLE DE ÁUDIO DO VÍDEO DO DIRETOR
+  const audioBtn = document.getElementById('audioToggleDirector');
+  const directorVideo = document.getElementById('directorVideo');
+
+  if (audioBtn && directorVideo) {
+    audioBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const stateEl = audioBtn.querySelector('.audio-state');
+
+      if (directorVideo.muted) {
+        directorVideo.muted = false;
+        directorVideo.volume = 1.0;
+        directorVideo.play().catch(() => {});
+        audioBtn.classList.add('is-playing-audio');
+        if (stateEl) stateEl.textContent = 'ATIVADO';
+        audioBtn.setAttribute('aria-label', 'Desativar áudio do vídeo');
+      } else {
+        directorVideo.muted = true;
+        audioBtn.classList.remove('is-playing-audio');
+        if (stateEl) stateEl.textContent = 'DESATIVADO';
+        audioBtn.setAttribute('aria-label', 'Ativar áudio do vídeo');
+      }
+    });
+  }
+
 })();
