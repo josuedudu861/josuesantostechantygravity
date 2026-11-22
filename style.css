@@ -1277,86 +1277,154 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   BOX DE CTA DE ORÇAMENTO DENTRO DO CARD DO DIRETOR
+   BLOCO SHOWCASE DE VÍDEO DO DIRETOR COM SUPER CTA
    ========================================================================== */
-.director-cta-card-box {
-  background: rgba(255, 42, 42, 0.04);
-  border: 1px solid rgba(255, 42, 42, 0.22);
-  border-radius: var(--radius-sm);
-  padding: 22px 24px;
-  margin: 18px 0 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  backdrop-filter: blur(8px);
+.video-showcase-cta-section {
+  margin-top: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 36px;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 40px;
+  align-items: center;
+  backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
-.cta-micro-badge {
+.video-showcase-cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-red), transparent);
+}
+
+.showcase-player-box {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.showcase-video-elem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.showcase-badge-tag {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(3, 3, 5, 0.85);
+  border: 1px solid var(--border-subtle);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
   font-family: var(--font-mono);
   font-size: 0.62rem;
   letter-spacing: 1px;
-  color: var(--accent-red);
-  background: rgba(255, 42, 42, 0.12);
-  padding: 3px 8px;
-  border-radius: var(--radius-sm);
-  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
 }
 
-.director-cta-title {
+.showcase-cta-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.showcase-cta-headline {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: clamp(1.4rem, 2.2vw, 1.95rem);
   font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
   text-transform: uppercase;
   color: #fff;
-  line-height: 1.25;
-  letter-spacing: -0.3px;
 }
 
-.director-cta-desc {
-  font-size: 0.9rem;
+.showcase-cta-copy {
+  font-size: 0.95rem;
   color: var(--text-muted);
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
-.cta-benefits-mini {
+.showcase-highlights {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px 18px;
-  font-size: 0.78rem;
-  color: #e2e2ec;
-  font-family: var(--font-mono);
+  flex-direction: column;
+  gap: 8px;
+  margin: 6px 0 10px;
 }
 
-.director-cta-btn-wrap {
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.highlight-icon {
+  font-size: 0.95rem;
+  color: var(--accent-red);
+}
+
+.highlight-text {
+  font-size: 0.88rem;
+  color: #e2e2ec;
+}
+
+.showcase-btn-wrap {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
+  gap: 10px;
   margin-top: 6px;
 }
 
-.btn-cta-budget {
+.btn-super-cta-video {
   background: var(--accent-red);
   color: #fff;
   border: 1px solid var(--accent-red);
   box-shadow: 0 0 35px var(--accent-red-glow);
-  padding: 15px 34px;
-  font-size: 0.88rem;
-  letter-spacing: 1.2px;
+  padding: 16px 36px;
+  font-size: 0.92rem;
+  letter-spacing: 1.5px;
   font-weight: 700;
 }
 
-.btn-cta-budget:hover {
+.btn-super-cta-video:hover {
   background: #ff4747;
-  box-shadow: 0 0 45px rgba(255, 42, 42, 0.75);
+  box-shadow: 0 0 55px rgba(255, 42, 42, 0.8);
   transform: translateY(-2px);
 }
 
-.cta-subnote {
+.showcase-subnote {
   font-family: var(--font-mono);
   font-size: 0.68rem;
   color: var(--text-dim);
   letter-spacing: 0.5px;
+}
+
+@media (max-width: 1024px) {
+  .video-showcase-cta-section {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 24px;
+  }
+  .showcase-player-box {
+    height: 320px;
+  }
 }
 
 /* ==========================================================================

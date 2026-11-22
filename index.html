@@ -494,40 +494,21 @@
       <div class="section-container">
         
         <div class="about-director-card">
-          <!-- Coluna Vídeo do Diretor Oficial -->
+          <!-- Coluna Foto Oficial do Diretor -->
           <div class="director-visual">
             <div class="director-img-container">
-              <!-- Vídeo de apresentação de Josué Santos -->
-              <video id="directorVideo" class="director-video" autoplay loop muted playsinline poster="assets/hero-poster.jpg">
-                <source src="assets/director-video.mp4" type="video/mp4">
-              </video>
+              <img src="assets/josue-photo.jpg" 
+                   alt="Josué Santos - Diretor Criativo de IA" 
+                   class="director-img">
               
               <div class="director-badge-corner">
                 <span class="badge-dot"></span>
                 <span>CHIEF CREATIVE AI</span>
               </div>
-
-              <!-- Controle de Áudio Flutuante -->
-              <button type="button" id="audioToggleDirector" class="video-audio-toggle" aria-label="Ativar áudio do vídeo" title="Ativar / Desativar Áudio">
-                <span class="audio-pulse-indicator"></span>
-                <span class="audio-icon-wrap">
-                  <svg class="icon-sound-off" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                    <line x1="23" y1="9" x2="17" y2="15"></line>
-                    <line x1="17" y1="9" x2="23" y2="15"></line>
-                  </svg>
-                  <svg class="icon-sound-on" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
-                  </svg>
-                </span>
-                <span class="audio-text-label">ÁUDIO: <b class="audio-state">DESATIVADO</b></span>
-              </button>
             </div>
           </div>
 
-          <!-- Coluna Informações & Super CTA de Orçamento -->
+          <!-- Coluna Informações & Perfil -->
           <div class="director-info">
             <span class="section-code">// 04 AUTOR & DIREÇÃO</span>
             <h2 class="director-name">JOSUÉ SANTOS</h2>
@@ -536,32 +517,6 @@
             <p class="director-bio">
               "A inteligência artificial não substitui a sensibilidade humana: ela multiplica nossa imaginação. Meu papel é guiar a tecnologia para que ela sirva a histórias reais, emoções autênticas e resultados de negócio concretos para marcas que querem liderar o seu segmento."
             </p>
-
-            <!-- Box de Destaque CTA de Orçamento -->
-            <div class="director-cta-card-box">
-              <span class="cta-micro-badge">ATENDIMENTO EXCLUSIVO</span>
-              <h3 class="director-cta-title">PRONTO PARA DESTACAR A SUA MARCA COM AUDIOVISUAL DE IMPACTO?</h3>
-              <p class="director-cta-desc">
-                Criamos filmes publicitários, conteúdos de alta retenção e presença web cinematográfica com agilidade recorde e padrão de excelência.
-              </p>
-
-              <div class="cta-benefits-mini">
-                <span>✓ Entrega ágil em 3 a 5 dias</span>
-                <span>✓ Resolução 4K/8K cinematográfica</span>
-                <span>✓ Direitos comerciais 100% garantidos</span>
-              </div>
-
-              <div class="director-cta-btn-wrap">
-                <a href="https://wa.me/5561982116291?text=Ol%C3%A1%20Josu%C3%A9%21%20Vi%20sua%20apresenta%C3%A7%C3%A3o%20no%20site%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20o%20meu%20projeto." 
-                   target="_blank" 
-                   rel="noopener" 
-                   class="btn-pill btn-pill-solid btn-cta-budget">
-                  <span>FAÇA SEU ORÇAMENTO AGORA</span>
-                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5H12.5M12.5 7.5L8 3M12.5 7.5L8 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </a>
-                <span class="cta-subnote">Resposta direta pelo WhatsApp oficial (+55 61 98211-6291)</span>
-              </div>
-            </div>
 
             <div class="director-tags-list">
               <span class="tech-tag-pill">DIREÇÃO DE ARTE</span>
@@ -580,6 +535,72 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
                 <span>YouTube Studio</span>
               </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCO LOGO ABAIXO: APRESENTAÇÃO EM VÍDEO COM SUPER CTA E BOTÃO DE ORÇAMENTO -->
+        <div class="video-showcase-cta-section">
+          <div class="showcase-player-box">
+            <video id="directorVideo" class="showcase-video-elem" autoplay loop muted playsinline poster="assets/josue-photo.jpg">
+              <source src="assets/director-video.mp4" type="video/mp4">
+            </video>
+            
+            <div class="showcase-badge-tag">
+              <span class="badge-dot"></span>
+              <span>APRESENTAÇÃO OFICIAL // IA STUDIO</span>
+            </div>
+
+            <!-- Botão de Áudio -->
+            <button type="button" id="audioToggleDirector" class="video-audio-toggle" aria-label="Ativar áudio do vídeo" title="Ativar / Desativar Áudio">
+              <span class="audio-pulse-indicator"></span>
+              <span class="audio-icon-wrap">
+                <svg class="icon-sound-off" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <line x1="23" y1="9" x2="17" y2="15"></line>
+                  <line x1="17" y1="9" x2="23" y2="15"></line>
+                </svg>
+                <svg class="icon-sound-on" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                </svg>
+              </span>
+              <span class="audio-text-label">ÁUDIO: <b class="audio-state">DESATIVADO</b></span>
+            </button>
+          </div>
+
+          <div class="showcase-cta-content">
+            <span class="section-code">// TRANSFORME O AUDIOVISUAL DA SUA MARCA</span>
+            <h3 class="showcase-cta-headline">PRONTO PARA DESTACAR A SUA MARCA COM VÍDEOS DE ALTO IMPACTO?</h3>
+            <p class="showcase-cta-copy">
+              Assista à apresentação de Josué Santos e descubra como nosso estúdio une inteligência artificial generativa de ponta com direção cinematográfica humana para produzir vídeos e campanhas que atraem clientes e geram autoridade imediata.
+            </p>
+
+            <div class="showcase-highlights">
+              <div class="highlight-item">
+                <span class="highlight-icon">⚡</span>
+                <span class="highlight-text">Entrega ágil em 3 a 5 dias úteis com revisões dedicadas</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-icon">🎬</span>
+                <span class="highlight-text">Qualidade cinematográfica 4K/8K pronta para tráfego pago e redes</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-icon">🔒</span>
+                <span class="highlight-text">Direitos comerciais 100% garantidos para qualquer mídia</span>
+              </div>
+            </div>
+
+            <div class="showcase-btn-wrap">
+              <a href="https://wa.me/5561982116291?text=Ol%C3%A1%20Josu%C3%A9%21%20Vi%20sua%20apresenta%C3%A7%C3%A3o%20e%20gostaria%20de%20fazer%20o%20or%C3%A7amento%20do%20meu%20v%C3%ADdeo." 
+                 target="_blank" 
+                 rel="noopener" 
+                 class="btn-pill btn-pill-solid btn-super-cta-video">
+                <span>FAÇA O ORÇAMENTO DO SEU VÍDEO</span>
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5H12.5M12.5 7.5L8 3M12.5 7.5L8 12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <span class="showcase-subnote">⚡ Resposta direta pelo WhatsApp oficial (+55 61 98211-6291) • Sem compromisso</span>
             </div>
           </div>
         </div>
