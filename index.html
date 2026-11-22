@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Josué Santos // Estúdio de Criação com IA & Direção Humana</title>
+  <meta name="description" content="Filmes, campanhas, avatares e experiências digitais geradas por inteligência artificial com acabamento e direção cinematográfica.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dark">
+
+  <!-- BACKGROUND FUTURISTA COM MÚLTIPLAS CAMADAS -->
+  <div class="futuristic-bg-container" aria-hidden="true">
+    <!-- Camada 1: Canvas Interativo de Partículas / Rede Neural -->
+    <canvas id="neuralCanvas"></canvas>
+    
+    <!-- Camada 2: Grid Técnico com Coordenadas -->
+    <div class="bg-technical-grid"></div>
+    
+    <!-- Camada 3: Feixes de Luz & Brilho Atmosférico Neon -->
+    <div class="bg-glow-orb orb-red"></div>
+    <div class="bg-glow-orb orb-amber"></div>
+    <div class="bg-glow-orb orb-cyan"></div>
+    
+    <!-- Camada 4: Linha de Varredura Laser (Scanline) -->
+    <div class="bg-scanline"></div>
+    
+    <!-- Coordenadas HUD nos cantos da tela -->
+    <div class="hud-corner hud-top-left">// SYS.LOC: BR-61</div>
+    <div class="hud-corner hud-top-right">SIGNAL: ACTIVE [99.8%]</div>
+    <div class="hud-corner hud-bottom-left">CORE: NEURAL_GEN_V4</div>
+    <div class="hud-corner hud-bottom-right">SEC: ENCRYPTED // TLS</div>
+  </div>
+
+  <!-- HEADER NAVEGAÇÃO CENTRALIZADA -->
+  <header class="site-header">
+    <div class="header-container header-centered-layout">
+      <!-- Linha Superior: Logo Centralizada como Título com Ações Laterais -->
+      <div class="header-top-row">
+        <div class="header-side-left">
+          <div class="lang-toggle" id="langToggle">
+            <button class="lang-btn active" data-lang="pt">PT</button>
+            <span class="lang-sep">/</span>
+            <button class="lang-btn" data-lang="en">EN</button>
+          </div>
+        </div>
+
+        <div class="header-center-logo">
+          <a href="#inicio" class="brand-logo" title="Josué Santos Tech">
+            <img src="assets/logo-red.png" alt="Josué Santos Tech" class="brand-logo-img">
+          </a>
+        </div>
+
+        <div class="header-side-right">
+          <a href="#briefing" class="btn-pill btn-pill-outline header-cta">
+            <span>INICIAR PROJETO</span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Linha Inferior: Barra de Serviços Centralizada (Abaixo da Logo) -->
+      <div class="header-bottom-nav">
+        <nav class="nav-menu nav-menu-centered">
+          <a href="#capacidades" class="nav-link"><span class="nav-num">01</span> SERVIÇOS</a>
+          <a href="#sistema" class="nav-link"><span class="nav-num">02</span> SISTEMA</a>
+          <a href="#processo" class="nav-link"><span class="nav-num">03</span> PROCESSO</a>
+          <a href="#sobre" class="nav-link"><span class="nav-num">04</span> SOBRE</a>
+          <a href="#duvidas" class="nav-link"><span class="nav-num">05</span> FAQ</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero-section">
+      <div class="hero-container">
+        
+        <!-- Coluna Esquerda: Texto & Chamadas -->
+        <div class="hero-content">
+          <!-- Monograma em Matriz de Pontos (inspirado no K da referência) -->
+          <div class="dot-matrix-hero-monogram" title="JS Intelligence">
+            <svg viewBox="0 0 160 120" class="matrix-svg" aria-hidden="true">
+              <!-- Matriz de pontos iluminados formando "J" e "S" futurista -->
+              <g class="matrix-dots">
+                <!-- Barra superior -->
+                <circle cx="20" cy="20" r="4"/><circle cx="36" cy="20" r="4"/><circle cx="52" cy="20" r="4"/><circle cx="68" cy="20" r="4"/>
+                <!-- Haste do J -->
+                <circle cx="52" cy="36" r="4"/><circle cx="52" cy="52" r="4"/><circle cx="52" cy="68" r="4"/><circle cx="52" cy="84" r="4"/>
+                <circle cx="36" cy="84" r="4"/><circle cx="20" cy="68" r="4"/>
+                
+                <!-- Letra S / Raio -->
+                <circle cx="100" cy="20" r="4"/><circle cx="116" cy="20" r="4"/><circle cx="132" cy="20" r="4"/>
+                <circle cx="92" cy="36" r="4"/>
+                <circle cx="100" cy="52" r="4"/><circle cx="116" cy="52" r="4"/>
+                <circle cx="132" cy="68" r="4"/>
+                <circle cx="92" cy="84" r="4"/><circle cx="108" cy="84" r="4"/><circle cx="124" cy="84" r="4"/>
+              </g>
+            </svg>
+            <span class="matrix-label">STUDIO NEURAL ARCHITECTURE // K1</span>
+          </div>
+
+          <div class="hero-eyebrow">
+            <span class="eyebrow-badge">HUMAN DIRECTED</span>
+            <span class="eyebrow-text">CREATIVE INTELLIGENCE / V4</span>
+          </div>
+
+          <h1 class="hero-title">
+            O MUNDO SE TORNA <br>
+            <span class="text-glow">CINEMATOGRÁFICO.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Uma camada de inteligência e direção humana para marcas que exigem impacto visual, velocidade e excelência estética em cada frame.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#capacidades" class="btn-pill btn-pill-solid">
+              <span>EXPLORAR SISTEMA</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L7 2.5M11.5 7L7 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            
+            <a href="#processo" class="btn-pill btn-pill-ghost">
+              <span class="play-icon-circle">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><polygon points="2,1 9,5 2,9"/></svg>
+              </span>
+              <span>VER FLUXO DE PRODUÇÃO</span>
+            </a>
+          </div>
+
+          <!-- Mini status de disponibilidade -->
+          <div class="hero-status-bar">
+            <span class="pulse-dot"></span>
+            <span class="status-text">Disponível para novos projetos e campanhas de alto impacto</span>
+          </div>
+        </div>
+
+        <!-- Coluna Direita: Visual Principal + Widgets HUD Flutuantes -->
+        <div class="hero-visual-wrapper">
+          <div class="hero-card-frame">
+            <!-- Vídeo de capa com visual cinematográfico futurista -->
+            <div class="hero-image-container hero-video-container">
+              <video class="hero-main-video" autoplay loop muted playsinline poster="assets/hero-poster.jpg">
+                <source src="assets/hero-video.mp4" type="video/mp4">
+              </video>
+              <div class="hero-gradient-overlay"></div>
+              
+              <!-- Retículo central HUD -->
+              <div class="hud-reticle">
+                <div class="reticle-line h-line"></div>
+                <div class="reticle-line v-line"></div>
+                <div class="reticle-circle"></div>
+              </div>
+              <!-- Badge discreto de Live Feed no rodapé interno do vídeo -->
+              <div class="hud-widget widget-status">
+                <span class="hud-live-tag">LIVE</span>
+                <span class="hud-spec-text">8K // 60 FPS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DOCK HUD EXTERNO: Menor e posicionado fora do card de vídeo -->
+          <div class="hero-hud-dock">
+            <!-- Widget 1: SIGNAL -->
+            <div class="hud-widget widget-signal">
+              <div class="widget-header">
+                <span class="widget-tag">NEURAL SIGNAL</span>
+                <span class="widget-dots">•••</span>
+              </div>
+              <div class="widget-value-row">
+                <span class="widget-number" id="signalValue">98</span>
+                <span class="widget-unit">/100</span>
+              </div>
+              <div class="widget-chart">
+                <canvas id="waveformCanvas" width="100" height="20"></canvas>
+              </div>
+            </div>
+
+            <!-- Widget 2: LATÊNCIA -->
+            <div class="hud-widget widget-latency">
+              <div class="widget-header">
+                <span class="widget-tag">PROD. LATENCY</span>
+                <span class="widget-dots">•••</span>
+              </div>
+              <div class="widget-value-row">
+                <span class="widget-number">24</span>
+                <span class="widget-unit">HRS</span>
+              </div>
+              <div class="widget-sparkline">
+                <svg viewBox="0 0 100 20" class="spark-svg">
+                  <path d="M0,16 L15,14 L30,18 L45,6 L60,12 L75,3 L90,10 L100,5" fill="none" stroke="#ff2a2a" stroke-width="2"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO 02: CAPACIDADES (NETWORK LOGIC GRID COM CRUSILHAS +) -->
+    <section id="capacidades" class="section-block">
+      <div class="section-container">
+        
+        <div class="section-header-row">
+          <div class="header-left">
+            <span class="section-code">02 // CAPACIDADES DO SISTEMA</span>
+            <h2 class="section-title">UM SISTEMA. TODAS AS MÍDIAS.</h2>
+          </div>
+          <p class="header-right-desc">
+            Conectamos a essência da sua marca a uma camada visual dinâmica de última geração: do filme publicitário à presença web de alta conversão.
+          </p>
+        </div>
+
+        <!-- Grid Modular Wireframe com Cruzetas (+) nas interseções -->
+        <div class="capabilities-matrix-grid">
+          
+          <!-- Card 1: Vídeo & Filmes de Marca -->
+          <div class="matrix-cell">
+            <div class="cell-crosshair tl">+</div>
+            <div class="cell-crosshair tr">+</div>
+            <div class="cell-crosshair bl">+</div>
+            <div class="cell-crosshair br">+</div>
+            
+            <div class="cell-tech-tag">01 / VÍDEO</div>
+            <div class="cell-hud-icon">
+              <!-- Radar Icon -->
+              <svg viewBox="0 0 40 40" class="tech-icon-svg">
+                <circle cx="20" cy="20" r="16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 3"/>
+                <circle cx="20" cy="20" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+                <circle cx="20" cy="20" r="3" fill="#ff2a2a"/>
+                <line x1="20" y1="20" x2="33" y2="12" stroke="#ff2a2a" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3 class="cell-title">FILMES & CAMPANHAS</h3>
+            <p class="cell-desc">Filmes publicitários, lançamentos institucionais e comerciais de produto com estética cinematográfica e storytelling denso.</p>
+            <div class="cell-footer-tag">SENSE // DIRECTION</div>
+          </div>
+
+          <!-- Card 2: Social & Alta Retenção -->
+          <div class="matrix-cell">
+            <div class="cell-crosshair tl">+</div>
+            <div class="cell-crosshair tr">+</div>
+            <div class="cell-crosshair bl">+</div>
+            <div class="cell-crosshair br">+</div>
+            
+            <div class="cell-tech-tag">02 / SOCIAL</div>
+            <div class="cell-hud-icon">
+              <!-- Starburst / Asterisk Icon -->
+              <svg viewBox="0 0 40 40" class="tech-icon-svg">
+                <line x1="20" y1="4" x2="20" y2="36" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="4" y1="20" x2="36" y2="20" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="9" y1="9" x2="31" y2="31" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="31" y1="9" x2="9" y2="31" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="20" cy="20" r="4" fill="#ffaa33"/>
+              </svg>
+            </div>
+            <h3 class="cell-title">CONTEÚDO DE ALTA RETENÇÃO</h3>
+            <p class="cell-desc">Vídeos verticais magnéticos (Reels, TikTok e Shorts) criados para interromper a rolagem e gerar engajamento imediato.</p>
+            <div class="cell-footer-tag">INTERPRET // ENGAGE</div>
+          </div>
+
+          <!-- Card 3: Imagem & Key Visuals -->
+          <div class="matrix-cell">
+            <div class="cell-crosshair tl">+</div>
+            <div class="cell-crosshair tr">+</div>
+            <div class="cell-crosshair bl">+</div>
+            <div class="cell-crosshair br">+</div>
+            
+            <div class="cell-tech-tag">03 / IMAGEM</div>
+            <div class="cell-hud-icon">
+              <!-- Orbit / Target Icon -->
+              <svg viewBox="0 0 40 40" class="tech-icon-svg">
+                <circle cx="20" cy="20" r="14" fill="none" stroke="currentColor" stroke-width="1.2"/>
+                <circle cx="20" cy="20" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="29" cy="11" r="2.5" fill="#ff2a2a"/>
+              </svg>
+            </div>
+            <h3 class="cell-title">DIREÇÃO DE ARTE & KEY VISUALS</h3>
+            <p class="cell-desc">Imagens ultra-realistas de produtos, conceitos de embalagem e ensaios visuais sem necessidade de locação ou estúdio físico caro.</p>
+            <div class="cell-footer-tag">GENERATE // REFINE</div>
+          </div>
+
+          <!-- Card 4: Avatares & Apresentadores -->
+          <div class="matrix-cell">
+            <div class="cell-crosshair tl">+</div>
+            <div class="cell-crosshair tr">+</div>
+            <div class="cell-crosshair bl">+</div>
+            <div class="cell-crosshair br">+</div>
+            
+            <div class="cell-tech-tag">04 / AVATARES</div>
+            <div class="cell-hud-icon">
+              <!-- Digital Face Mesh Icon -->
+              <svg viewBox="0 0 40 40" class="tech-icon-svg">
+                <polygon points="20,6 32,16 28,34 12,34 8,16" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                <circle cx="16" cy="18" r="2" fill="#ff2a2a"/>
+                <circle cx="24" cy="18" r="2" fill="#ff2a2a"/>
+                <line x1="17" y1="26" x2="23" y2="26" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3 class="cell-title">PORTA-VOZES VIRTUAIS</h3>
+            <p class="cell-desc">Apresentadores e avatares digitais hiper-realistas para treinamentos, atendimento em escala e comunicação institucional.</p>
+            <div class="cell-footer-tag">SYNTH // HUMAN</div>
+          </div>
+
+          <!-- Card 5: Motion & Animação -->
+          <div class="matrix-cell">
+            <div class="cell-crosshair tl">+</div>
+            <div class="cell-crosshair tr">+</div>
+            <div class="cell-crosshair bl">+</div>
+            <div class="cell-crosshair br">+</div>
+            
+            <div class="cell-tech-tag">05 / MOVIMENTO</div>
+            <div class="cell-hud-icon">
+              <!-- Wave Pulse Icon -->
+              <svg viewBox="0 0 40 40" class="tech-icon-svg">
+                <path d="M4,20 L12,20 L16,8 L20,32 L24,14 L28,24 L32,20 L36,20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="cell-title">ANIMAÇÃO & PÓS-PRODUÇÃO</h3>
+            <p class="cell-desc">Transformação de imagens estáticas em vídeo dinâmico, animações 3D, transições de alta precisão e efeitos visuais.</p>
+            <div class="cell-footer-tag">MOTION // VIRTUAL</div>
+          </div>
+
+          <!-- Card 6: Experiências Digitais & Sites -->
+          <div class="matrix-cell">
+            <div class="cell-crosshair tl">+</div>
+            <div class="cell-crosshair tr">+</div>
+            <div class="cell-crosshair bl">+</div>
+            <div class="cell-crosshair br">+</div>
+            
+            <div class="cell-tech-tag">06 / DIGITAL</div>
+            <div class="cell-hud-icon">
+              <!-- Code / Window Terminal Icon -->
+              <svg viewBox="0 0 40 40" class="tech-icon-svg">
+                <rect x="6" y="8" width="28" height="24" rx="3" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                <line x1="6" y1="16" x2="34" y2="16" stroke="currentColor" stroke-width="1"/>
+                <circle cx="11" cy="12" r="1.5" fill="#ff2a2a"/>
+                <circle cx="16" cy="12" r="1.5" fill="#ffaa33"/>
+              </svg>
+            </div>
+            <h3 class="cell-title">SITES & LANDING PAGES</h3>
+            <p class="cell-desc">Páginas de altíssima conversão, com visual futurista e performance imbatível, projetadas para posicionar sua marca no topo.</p>
+            <div class="cell-footer-tag">DEPLOY // ADAPT</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO 03: CAMADAS DE INTELIGÊNCIA / PROCESSO (CARDS DE VIDRO FOSCO + ONDAS DE LUZ) -->
+    <section id="processo" class="section-block process-section">
+      <!-- Fundo de fita de luz líquida / brilho escuro 3D -->
+      <div class="fluid-light-ribbon" aria-hidden="true"></div>
+
+      <div class="section-container">
+        
+        <div class="section-header-row">
+          <div class="header-left">
+            <span class="section-code">03 // CAMADAS DE PRODUÇÃO</span>
+            <h2 class="section-title">DO SINAL À AÇÃO CRIATIVA.</h2>
+          </div>
+          <p class="header-right-desc">
+            Nosso método em 4 etapas garante precisão matemática, velocidade absurda e total controle estético sobre cada detalhe gerado por IA.
+          </p>
+        </div>
+
+        <!-- 3 Cards em Vidro Fosco Flutuante (Glassmorphism de Alto Padrão) -->
+        <div class="glass-layers-grid">
+          
+          <!-- Passo 01 -->
+          <div class="glass-step-card">
+            <div class="step-num-pill">01</div>
+            <div class="step-icon-burst">
+              <!-- Radial dot burst -->
+              <svg viewBox="0 0 48 48" class="burst-svg">
+                <circle cx="24" cy="24" r="5" fill="#ff2a2a"/>
+                <circle cx="24" cy="8" r="2" fill="#fff" opacity="0.6"/>
+                <circle cx="24" cy="40" r="2" fill="#fff" opacity="0.6"/>
+                <circle cx="8" cy="24" r="2" fill="#fff" opacity="0.6"/>
+                <circle cx="40" cy="24" r="2" fill="#fff" opacity="0.6"/>
+                <circle cx="13" cy="13" r="2" fill="#fff" opacity="0.4"/>
+                <circle cx="35" cy="35" r="2" fill="#fff" opacity="0.4"/>
+                <circle cx="13" cy="35" r="2" fill="#fff" opacity="0.4"/>
+                <circle cx="35" cy="13" r="2" fill="#fff" opacity="0.4"/>
+              </svg>
+            </div>
+            <h3 class="step-title">ENTENDER</h3>
+            <span class="step-subtitle">SENSE // BRIEFING</span>
+            <p class="step-desc">Mapeamos seu objetivo comercial, tom de voz, identidade de marca e referências visuais para estabelecer o padrão ouro do projeto.</p>
+            <div class="step-arrow-btn">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L7 2.5M11.5 7L7 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+          <!-- Passo 02 -->
+          <div class="glass-step-card">
+            <div class="step-num-pill">02</div>
+            <div class="step-icon-burst">
+              <!-- Matrix dot grid icon -->
+              <svg viewBox="0 0 48 48" class="burst-svg">
+                <rect x="14" y="14" width="6" height="6" rx="1" fill="#ffaa33"/>
+                <rect x="24" y="14" width="6" height="6" rx="1" fill="#fff" opacity="0.7"/>
+                <rect x="14" y="24" width="6" height="6" rx="1" fill="#fff" opacity="0.7"/>
+                <rect x="24" y="24" width="6" height="6" rx="1" fill="#ff2a2a"/>
+                <circle cx="8" cy="8" r="1.5" fill="#fff" opacity="0.3"/>
+                <circle cx="40" cy="40" r="1.5" fill="#fff" opacity="0.3"/>
+              </svg>
+            </div>
+            <h3 class="step-title">DIRECIONAR</h3>
+            <span class="step-subtitle">INTERPRET // CONCEITO</span>
+            <p class="step-desc">Desenvolvemos roteiro, storyboard e engenharia de prompts técnicos para garantir que a IA produza exatamente a visão planejada.</p>
+            <div class="step-arrow-btn">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L7 2.5M11.5 7L7 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+          <!-- Passo 03 -->
+          <div class="glass-step-card active-card">
+            <div class="step-num-pill">03</div>
+            <div class="step-icon-burst">
+              <!-- Star node network -->
+              <svg viewBox="0 0 48 48" class="burst-svg">
+                <circle cx="24" cy="24" r="6" fill="#ff2a2a"/>
+                <line x1="24" y1="24" x2="38" y2="14" stroke="#ff2a2a" stroke-width="2"/>
+                <line x1="24" y1="24" x2="10" y2="34" stroke="#ffaa33" stroke-width="2"/>
+                <circle cx="38" cy="14" r="3" fill="#fff"/>
+                <circle cx="10" cy="34" r="3" fill="#fff"/>
+              </svg>
+            </div>
+            <h3 class="step-title">SINTETIZAR</h3>
+            <span class="step-subtitle">GENERATE // CURADORIA</span>
+            <p class="step-desc">Geração em múltiplos motores de IA generativa de última geração aliada à curadoria e olhar cinematográfico humano frame a frame.</p>
+            <div class="step-arrow-btn">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L7 2.5M11.5 7L7 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+          <!-- Passo 04 -->
+          <div class="glass-step-card">
+            <div class="step-num-pill">04</div>
+            <div class="step-icon-burst">
+              <!-- Target render complete -->
+              <svg viewBox="0 0 48 48" class="burst-svg">
+                <polygon points="24,6 42,16 42,32 24,42 6,32 6,16" fill="none" stroke="#fff" stroke-width="1.5" opacity="0.6"/>
+                <polygon points="24,14 34,20 34,28 24,34 14,28 14,20" fill="none" stroke="#ff2a2a" stroke-width="1.5"/>
+                <circle cx="24" cy="24" r="3" fill="#fff"/>
+              </svg>
+            </div>
+            <h3 class="step-title">FINALIZAR</h3>
+            <span class="step-subtitle">DELIVER // MULTI-FORMATO</span>
+            <p class="step-desc">Tratamento de cor, sonorização imersiva e exportação pronta para distribuição nos formatos 9:16 (vertical), 16:9 (cinema) e 1:1.</p>
+            <div class="step-arrow-btn">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L7 2.5M11.5 7L7 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO 04: O DIRETOR / SOBRE JOSUÉ SANTOS -->
+    <section id="sobre" class="section-block">
+      <div class="section-container">
+        
+        <div class="about-director-card">
+          <!-- Coluna Foto do Diretor com HUD Visual -->
+          <div class="director-visual">
+            <div class="director-img-container">
+              <!-- Foto oficial de Josué Santos do site atual -->
+              <img src="https://www.josuesantosia.com.br/assets/josue-santos.jpg" 
+                   alt="Josué Santos - Diretor Criativo de IA" 
+                   class="director-img"
+                   onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80'">
+              
+              <div class="director-badge-corner">
+                <span class="badge-dot"></span>
+                <span>CHIEF CREATIVE AI</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coluna Informações & Especialidades -->
+          <div class="director-info">
+            <span class="section-code">// 04 AUTOR & DIREÇÃO</span>
+            <h2 class="director-name">JOSUÉ SANTOS</h2>
+            <p class="director-role">Especialista em Audiovisual com IA, Design Generativo & Desenvolvimento Web</p>
+            
+            <p class="director-bio">
+              "A inteligência artificial não substitui a sensibilidade humana: ela multiplica nossa imaginação. Meu papel é guiar a tecnologia para que ela sirva a histórias reais, emoções autênticas e resultados de negócio concretos para marcas que querem liderar o seu segmento."
+            </p>
+
+            <div class="director-tags-list">
+              <span class="tech-tag-pill">DIREÇÃO DE ARTE</span>
+              <span class="tech-tag-pill">CINEMATOGRAFIA COM IA</span>
+              <span class="tech-tag-pill">STORYTELLING</span>
+              <span class="tech-tag-pill">MOTION DESIGN</span>
+              <span class="tech-tag-pill">UI/UX & WEB</span>
+            </div>
+
+            <div class="director-channels">
+              <a href="https://instagram.com/josuesantostech" target="_blank" rel="noopener" class="channel-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <span>@josuesantostech</span>
+              </a>
+              <a href="https://youtube.com/@JOSUESANTOSTECH" target="_blank" rel="noopener" class="channel-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                <span>YouTube Studio</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO 05: DÚVIDAS FREQUENTES (FAQ MINIMALISTA TECH) -->
+    <section id="duvidas" class="section-block">
+      <div class="section-container">
+        
+        <div class="section-header-row">
+          <div class="header-left">
+            <span class="section-code">05 // ESCLARECIMENTOS</span>
+            <h2 class="section-title">PERGUNTAS FREQUENTES.</h2>
+          </div>
+        </div>
+
+        <div class="faq-accordion-list">
+          
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-num">01</span>
+              <span class="faq-question">Preciso já ter um roteiro ou ideia pronta?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              <p>Não. Você pode chegar apenas com o objetivo ou dor da sua marca ("quero lançar um produto", "preciso de mais presença nos reels"). Nós desenvolvemos toda a narrativa, o roteiro técnico e a direção artística a partir do zero.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-num">02</span>
+              <span class="faq-question">É possível usar minhas fotos, voz ou produtos reais?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              <p>Sim! Podemos criar avatares baseados na sua própria imagem, clonar sua voz com entonação natural para múltiplos idiomas ou incorporar modelos 3D e fotos reais do seu produto físico dentro dos cenários gerados por IA.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-num">03</span>
+              <span class="faq-question">Qual é o prazo médio de entrega de um filme ou campanha?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              <p>Enquanto uma produtora tradicional costuma levar de 4 a 8 semanas, nosso fluxo integrado com IA permite entregar versões completas em 3 a 7 dias úteis, com revisões ágeis e acabamento premium.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-num">04</span>
+              <span class="faq-question">Os vídeos e imagens têm direitos comerciais garantidos?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              <p>Sim. Todas as entregas incluem direitos de uso comercial irrestrito para campanhas pagas, redes sociais, TV, sites e apresentações corporativas.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO 06: BRIEFING INTERATIVO / TRANSMISSÃO WHATSAPP (ESTILO KERNEL ONE CTA) -->
+    <section id="briefing" class="section-block briefing-section">
+      <div class="section-container">
+        
+        <div class="briefing-terminal-card">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="terminal-title">TRANSMISSION TERMINAL // WHATSAPP DIRECT</span>
+            <span class="terminal-secure-tag">ENCRYPTED 256-BIT</span>
+          </div>
+
+          <div class="terminal-body">
+            <div class="terminal-intro">
+              <span class="section-code">// 06 INICIAR CONEXÃO</span>
+              <h2 class="terminal-heading">CRIE O PRÓXIMO NÍVEL DA SUA MARCA.</h2>
+              <p class="terminal-sub">Preencha os dados abaixo. Nós formatamos automaticamente os parâmetros do seu projeto e conectamos você diretamente ao WhatsApp do diretor.</p>
+            </div>
+
+            <form id="briefingForm" class="terminal-form">
+              <div class="form-grid">
+                
+                <div class="form-group">
+                  <label for="clientName" class="form-label">
+                    <span class="label-prefix">&gt;</span> SEU NOME OU EMPRESA:
+                  </label>
+                  <input type="text" id="clientName" class="form-input" placeholder="Ex: Lucas Mendes / Marca X" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="serviceSelect" class="form-label">
+                    <span class="label-prefix">&gt;</span> CAPACIDADE DE INTERESSE:
+                  </label>
+                  <select id="serviceSelect" class="form-input form-select" required>
+                    <option value="" disabled selected>Selecione o serviço...</option>
+                    <option value="Filmes & Campanhas com IA">01 / Filmes & Campanhas com IA</option>
+                    <option value="Conteúdo para Redes (Reels/Shorts)">02 / Conteúdo para Redes (Reels/Shorts)</option>
+                    <option value="Direção de Arte & Imagens">03 / Direção de Arte & Imagens</option>
+                    <option value="Porta-Vozes & Avatares Virtuais">04 / Porta-Vozes & Avatares Virtuais</option>
+                    <option value="Animação & Motion Graphics">05 / Animação & Motion Graphics</option>
+                    <option value="Site / Landing Page Futurista">06 / Site / Landing Page Futurista</option>
+                    <option value="Projeto Personalizado Completo">07 / Projeto Personalizado Completo</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <div class="form-group">
+                <label for="projectBrief" class="form-label">
+                  <span class="label-prefix">&gt;</span> DETALHES DO PROJETO / OBJETIVO:
+                </label>
+                <textarea id="projectBrief" class="form-input form-textarea" rows="3" placeholder="Descreva brevemente sua ideia, prazos ou expectativas..." required></textarea>
+              </div>
+
+              <div class="form-submit-row">
+                <button type="submit" class="btn-pill btn-pill-solid btn-submit-neon">
+                  <span>TRANSMITIR BRIEFING VIA WHATSAPP</span>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L7 2.5M11.5 7L7 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <span class="form-note">Resposta direta pelo WhatsApp oficial (+55 61 98211-6291)</span>
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER TÉCNICO -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="assets/logo-red.png" alt="Josué Santos Tech" class="footer-logo-img">
+        <span class="footer-copy">© 2026 Josué Santos. Todos os direitos reservados.</span>
+      </div>
+
+      <div class="footer-center">
+        <span class="footer-coords">LAT: -15.793889 // LONG: -47.882778</span>
+        <span class="footer-status"><i class="status-indicator"></i> SISTEMA 100% OPERACIONAL</span>
+      </div>
+
+      <div class="footer-right">
+        <a href="#inicio" class="back-to-top-btn" title="Retornar ao topo">
+          <span>TOPO</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 10V2M6 2L2 6M6 2L10 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="background.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
