@@ -1102,11 +1102,13 @@ button, input, select, textarea {
   border: 1px solid var(--border-subtle);
 }
 
-.director-img {
+.director-img,
+.director-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: contrast(1.1);
+  filter: contrast(1.08);
+  display: block;
 }
 
 .director-badge-corner {
