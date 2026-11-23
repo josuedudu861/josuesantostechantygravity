@@ -1611,12 +1611,6 @@
       form.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        const name = document.getElementById('clientName').value.trim();
-        const phone = document.getElementById('clientPhone').value.trim();
-        const company = document.getElementById('clientCompany').value.trim();
-        const segment = document.getElementById('clientSegment').value.trim() || 'Não especificado';
-        const product = document.getElementById('clientProduct').value.trim();
-        
         function sanitizeText(str, maxLen = 400) {
           if (!str) return '';
           return String(str)
