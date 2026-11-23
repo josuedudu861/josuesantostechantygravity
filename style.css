@@ -404,18 +404,21 @@ button, input, select, textarea {
 }
 
 .btn-pill-solid {
-  background: #fff;
-  color: #000;
-  border: 1px solid #fff;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, rgba(255, 42, 42, 0.22) 0%, rgba(20, 14, 28, 0.9) 50%, rgba(176, 38, 255, 0.22) 100%);
+  color: #fff;
+  border: 1px solid rgba(255, 42, 42, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 16px rgba(255, 42, 42, 0.2);
+  letter-spacing: 1.2px;
 }
 
 .btn-pill-solid:hover {
-  background: var(--accent-red);
+  background: linear-gradient(135deg, rgba(255, 42, 42, 0.38) 0%, rgba(35, 18, 48, 0.98) 50%, rgba(176, 38, 255, 0.38) 100%);
   color: #fff;
-  border-color: var(--accent-red);
-  box-shadow: 0 0 25px var(--accent-red-glow);
-  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 10px 28px rgba(0, 0, 0, 0.65), 0 0 28px rgba(255, 42, 42, 0.4);
+  transform: translateY(-2px);
 }
 
 .btn-pill-outline {
@@ -459,17 +462,31 @@ button, input, select, textarea {
 }
 
 .btn-submit-neon {
-  background: var(--accent-red);
+  background: linear-gradient(135deg, rgba(255, 42, 42, 0.22) 0%, rgba(18, 12, 28, 0.9) 50%, rgba(176, 38, 255, 0.22) 100%);
   color: #fff;
-  border: 1px solid var(--accent-red);
-  box-shadow: 0 0 30px var(--accent-red-glow);
-  padding: 14px 32px;
-  font-size: 0.85rem;
+  border: 1px solid rgba(255, 42, 42, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 18px rgba(255, 42, 42, 0.2);
+  padding: 14px 30px;
+  font-size: 0.84rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .btn-submit-neon:hover {
-  background: #ff4747;
-  box-shadow: 0 0 45px rgba(255, 42, 42, 0.6);
+  background: linear-gradient(135deg, rgba(255, 42, 42, 0.38) 0%, rgba(35, 18, 48, 0.98) 50%, rgba(176, 38, 255, 0.38) 100%);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 10px 28px rgba(0, 0, 0, 0.65), 0 0 28px rgba(255, 42, 42, 0.4);
   transform: translateY(-2px);
 }
 
@@ -1400,19 +1417,29 @@ button, input, select, textarea {
 }
 
 .btn-super-cta-video {
-  background: var(--accent-red);
+  background: linear-gradient(135deg, rgba(255, 42, 42, 0.22) 0%, rgba(18, 12, 28, 0.9) 50%, rgba(176, 38, 255, 0.22) 100%);
   color: #fff;
-  border: 1px solid var(--accent-red);
-  box-shadow: 0 0 35px var(--accent-red-glow);
-  padding: 16px 36px;
-  font-size: 0.92rem;
-  letter-spacing: 1.5px;
+  border: 1px solid rgba(255, 42, 42, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 42, 42, 0.25);
+  padding: 14px 32px;
+  font-size: 0.88rem;
+  letter-spacing: 1.2px;
   font-weight: 700;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition-smooth);
+  text-decoration: none;
 }
 
 .btn-super-cta-video:hover {
-  background: #ff4747;
-  box-shadow: 0 0 55px rgba(255, 42, 42, 0.8);
+  background: linear-gradient(135deg, rgba(255, 42, 42, 0.38) 0%, rgba(35, 18, 48, 0.98) 50%, rgba(176, 38, 255, 0.38) 100%);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.65);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 12px 32px rgba(0, 0, 0, 0.65), 0 0 30px rgba(255, 42, 42, 0.45);
   transform: translateY(-2px);
 }
 
@@ -1850,23 +1877,51 @@ button, input, select, textarea {
   }
 }
 
-/* Links de Acesso ao Formulário de Briefing Externo */
+/* Links de Acesso ao Formulário de Briefing Externo com Alto Destaque e Elegância */
 .nav-link-briefing {
   color: #fff !important;
-  background: rgba(255, 42, 42, 0.12);
-  border: 1px solid rgba(255, 42, 42, 0.4);
-  border-radius: var(--radius-sm);
-  padding: 4px 10px;
-  box-shadow: 0 0 10px rgba(255, 42, 42, 0.2);
+  background: linear-gradient(135deg, rgba(255, 42, 42, 0.28) 0%, rgba(176, 38, 255, 0.32) 100%);
+  border: 1px solid rgba(255, 42, 42, 0.65);
+  border-radius: var(--radius-pill);
+  padding: 6px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 0.78rem;
+  box-shadow: 0 0 20px rgba(255, 42, 42, 0.4), inset 0 0 12px rgba(176, 38, 255, 0.25);
+  position: relative;
   transition: var(--transition-fast);
+  animation: navBriefingPulse 3s infinite ease-in-out;
+}
+
+@keyframes navBriefingPulse {
+  0%, 100% {
+    box-shadow: 0 0 16px rgba(255, 42, 42, 0.35), inset 0 0 10px rgba(176, 38, 255, 0.2);
+    border-color: rgba(255, 42, 42, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(255, 42, 42, 0.65), inset 0 0 16px rgba(176, 38, 255, 0.4);
+    border-color: rgba(255, 170, 51, 0.85);
+  }
 }
 
 .nav-link-briefing:hover {
-  background: var(--accent-red);
+  background: linear-gradient(135deg, rgba(255, 42, 42, 0.45) 0%, rgba(176, 38, 255, 0.5) 100%);
+  border-color: #fff;
   color: #fff !important;
-  border-color: var(--accent-red);
-  box-shadow: 0 0 16px var(--accent-red-glow);
-  transform: translateY(-1px);
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 0 32px rgba(255, 42, 42, 0.8), inset 0 0 16px rgba(255, 255, 255, 0.4);
+}
+
+.briefing-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ff2a2a;
+  box-shadow: 0 0 8px #ff2a2a, 0 0 14px #ff2a2a;
+  animation: pulseDot 1.4s infinite ease-in-out;
 }
 
 .subnote-briefing-link {
