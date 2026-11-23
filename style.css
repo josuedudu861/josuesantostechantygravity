@@ -497,27 +497,30 @@ button, input, select, textarea {
   align-items: center;
 }
 
-/* Monograma Matriz de Pontos (inspirado no grande K) */
-.dot-matrix-hero-monogram {
+/* Logo Oficial no Hero */
+.hero-brand-badge {
   display: flex;
   align-items: center;
   gap: 16px;
   margin-bottom: 24px;
+  flex-wrap: wrap;
 }
 
-.matrix-svg {
-  width: 130px;
-  height: 70px;
+.hero-brand-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 16px rgba(255, 42, 42, 0.4));
+  transition: var(--transition-fast);
 }
 
-.matrix-dots circle {
-  fill: #fff;
-  opacity: 0.85;
+.hero-brand-logo:hover {
+  filter: drop-shadow(0 0 24px rgba(255, 42, 42, 0.7));
+  transform: translateY(-1px);
 }
 
-.matrix-dots circle:nth-child(3n) {
-  fill: var(--accent-red);
-  opacity: 1;
+.dot-matrix-hero-monogram {
+  display: none;
 }
 
 .matrix-label {
