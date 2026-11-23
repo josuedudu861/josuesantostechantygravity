@@ -67,6 +67,36 @@
     });
   }
 
+  // 2.1 EXPLICATIVO RECOLHÍVEL DO BRIEFING (+)
+  const explainerToggle = document.getElementById('briefingExplainerToggle');
+  const explainerDrawer = document.getElementById('briefingExplainerDrawer');
+  if (explainerToggle && explainerDrawer) {
+    explainerToggle.addEventListener('click', () => {
+      const isExpanded = explainerToggle.getAttribute('aria-expanded') === 'true';
+      if (!isExpanded) {
+        explainerToggle.classList.add('active');
+        explainerToggle.setAttribute('aria-expanded', 'true');
+        const sign = explainerToggle.querySelector('.explainer-toggle-sign');
+        if (sign) sign.textContent = '−';
+        explainerDrawer.style.maxHeight = explainerDrawer.scrollHeight + 'px';
+        explainerDrawer.classList.add('is-open');
+      } else {
+        explainerToggle.classList.remove('active');
+        explainerToggle.setAttribute('aria-expanded', 'false');
+        const sign = explainerToggle.querySelector('.explainer-toggle-sign');
+        if (sign) sign.textContent = '+';
+        explainerDrawer.style.maxHeight = null;
+        explainerDrawer.classList.remove('is-open');
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (explainerToggle.getAttribute('aria-expanded') === 'true') {
+        explainerDrawer.style.maxHeight = explainerDrawer.scrollHeight + 'px';
+      }
+    });
+  }
+
   // 3. SISTEMA DE IDIOMA (PT / EN)
   const langButtons = document.querySelectorAll('.lang-btn');
   const translations = {
