@@ -210,4 +210,57 @@
   setupVideoAudioToggle('audioToggleAuthor', 'authorDirectorVideo');
   setupVideoAudioToggle('audioToggleDirector', 'directorVideo');
 
+  // 4. INTELLIGENT VIDEO STREAMING & VIEWPORT OBSERVER
+  // Otimiza o consumo de banda de internet e garante reprodução instantânea:
+  // - Dá prioridade máxima ao vídeo de entrada (Hero).
+  // - Vídeos das seções inferiores só consomem banda e dão play quando o usuário rolar próximo a eles (350px antes).
+  // - Pausa vídeos fora de tela para liberar GPU/CPU e memória em celulares e notebooks.
+  const heroVideo = document.getElementById('heroVideo');
+  if (heroVideo) {
+    heroVideo.muted = true;
+    const playHero = () => {
+      heroVideo.play().catch(() => {});
+    };
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      playHero();
+    } else {
+      document.addEventListener('DOMContentLoaded', playHero);
+    }
+  }
+
+  const allManagedVideos = [
+    heroVideo,
+    document.getElementById('authorDirectorVideo'),
+    document.getElementById('directorVideo')
+  ].filter(Boolean);
+
+  if ('IntersectionObserver' in window) {
+    const videoStreamObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          if (video.paused) {
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+              playPromise.catch(() => {
+                video.muted = true;
+                video.play().catch(() => {});
+              });
+            }
+          }
+        } else {
+          // Pausa se rolou para fora da tela (exceto se for o hero enquanto no topo)
+          if (!video.paused && video.id !== 'heroVideo') {
+            video.pause();
+          }
+        }
+      });
+    }, {
+      rootMargin: '350px 0px 350px 0px',
+      threshold: 0.05
+    });
+
+    allManagedVideos.forEach((vid) => videoStreamObserver.observe(vid));
+  }
+
 })();

@@ -29,7 +29,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css?v=20261122_13">
+  <!-- Preload do Vídeo Principal e Poster para Inicialização Imediata (Sub-segundo) -->
+  <link rel="preload" as="image" href="assets/hero-poster.jpg" fetchpriority="high">
+  <link rel="preload" as="video" href="assets/hero-video.mp4?v=20261123_03" type="video/mp4" fetchpriority="high">
+
+  <link rel="stylesheet" href="style.css?v=20261123_01">
 </head>
 <body class="theme-dark">
 
@@ -155,10 +159,10 @@
         <!-- Coluna Direita: Visual Principal + Widgets HUD Flutuantes -->
         <div class="hero-visual-wrapper">
           <div class="hero-card-frame">
-            <!-- Vídeo de capa com visual cinematográfico futurista -->
+            <!-- Vídeo de capa com visual cinematográfico futurista (Ultra-Fast Preload) -->
             <div class="hero-image-container hero-video-container">
-              <video id="heroVideo" class="hero-main-video" autoplay loop muted playsinline poster="assets/hero-poster.jpg">
-                <source src="assets/hero-video.mp4" type="video/mp4">
+              <video id="heroVideo" class="hero-main-video" autoplay loop muted playsinline preload="auto" poster="assets/hero-poster.jpg">
+                <source src="assets/hero-video.mp4?v=20261123_03" type="video/mp4">
               </video>
               <div class="hero-gradient-overlay"></div>
               
@@ -507,12 +511,13 @@
           <!-- Coluna Vídeo Oficial do Diretor (Substitui foto de referência) -->
           <div class="director-visual">
             <div class="director-img-container">
-              <!-- Vídeo Oficial do Diretor em Alta Definição -->
+              <!-- Vídeo Oficial do Diretor em Alta Definição (Fast Streaming) -->
               <video id="authorDirectorVideo" 
                      class="director-video" 
-                     autoplay loop muted playsinline 
-                     poster="assets/josue-photo.jpg">
-                <source src="assets/director-video.mp4?v=20261122_07" type="video/mp4">
+                     loop muted playsinline 
+                     preload="none" 
+                     poster="assets/director-poster.jpg">
+                <source src="assets/director-video.mp4?v=20261123_03" type="video/mp4">
               </video>
               
               <!-- Badge do Diretor -->
@@ -575,8 +580,12 @@
         <!-- BLOCO LOGO ABAIXO: APRESENTAÇÃO EM VÍDEO 9:16 COM SUPER CTA E BOTÃO DE ORÇAMENTO -->
         <div class="video-showcase-cta-section">
           <div class="showcase-player-box">
-            <video id="directorVideo" class="showcase-video-elem" autoplay loop muted playsinline poster="assets/presentation-poster.jpg">
-              <source src="assets/director-presentation.mp4" type="video/mp4">
+            <video id="directorVideo" 
+                   class="showcase-video-elem" 
+                   loop muted playsinline 
+                   preload="none" 
+                   poster="assets/presentation-poster.jpg">
+              <source src="assets/director-presentation.mp4?v=20261123_03" type="video/mp4">
             </video>
             
             <div class="showcase-badge-tag">
@@ -854,6 +863,6 @@
 
   <!-- Scripts -->
   <script src="background.js?v=20261122_02"></script>
-  <script src="app.js?v=20261122_08"></script>
+  <script src="app.js?v=20261123_01"></script>
 </body>
 </html>
