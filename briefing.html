@@ -3,34 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Briefing & Diagnóstico de Projeto // JosueSantosTech</title>
-  <meta name="description" content="Formulário de diagnóstico e briefing estratégico para produção de vídeos com IA, landing pages e comunicação visual na JosueSantosTech.">
-  <meta name="theme-color" content="#030305">
+  <title>Briefing & Diagnóstico Estratégico // JosueSantosTech</title>
+  <meta name="description" content="Formulário de diagnóstico e briefing estratégico de alta conversão para produção de vídeos com IA, landing pages e direção de arte cinematográfica.">
+  <meta name="theme-color" content="#07040d">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --bg-deep: #030305;
-      --bg-card: rgba(14, 14, 18, 0.78);
-      --bg-card-hover: rgba(22, 22, 28, 0.95);
-      --bg-input: rgba(8, 8, 12, 0.85);
-      --border-subtle: rgba(255, 255, 255, 0.09);
-      --border-focus: rgba(255, 42, 42, 0.6);
-      --accent-red: #ff2a2a;
-      --accent-red-glow: rgba(255, 42, 42, 0.35);
-      --accent-red-hover: #ff4747;
-      --accent-amber: #ffaa33;
-      --text-main: #f4f4f7;
-      --text-muted: #8b8b98;
-      --text-dim: #5c5c68;
+      /* Paleta Visual Inspirada no Design Foto 2 & Iluminação Foto 3 */
+      --bg-deep: #06040b;
+      --bg-surface: #0c0817;
+      --bg-card: rgba(18, 13, 30, 0.75);
+      --bg-card-hover: rgba(28, 20, 48, 0.9);
+      --bg-input: rgba(10, 7, 18, 0.88);
+      
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(176, 38, 255, 0.35);
+      --border-focus: #b026ff;
+      
+      /* Gradientes Neon de Alto Impacto */
+      --neon-magenta: #e024c3;
+      --neon-purple: #b026ff;
+      --neon-violet: #7928ca;
+      --neon-cyan: #00f0ff;
+      --neon-orange: #ff5500;
+      --neon-amber: #ffaa00;
+      
+      --gradient-brand: linear-gradient(135deg, #ff007a 0%, #b026ff 50%, #00f0ff 100%);
+      --gradient-btn: linear-gradient(90deg, #ff5500 0%, #e024c3 50%, #b026ff 100%);
+      --gradient-btn-hover: linear-gradient(90deg, #ff6b1a 0%, #f03ad5 50%, #c43aff 100%);
+      --gradient-card-top: linear-gradient(90deg, #ff5500, #e024c3, #b026ff, #00f0ff);
+      
+      --text-main: #f8f7fc;
+      --text-muted: #a69ebd;
+      --text-dim: #6d6482;
+      
       --font-heading: 'Space Grotesk', -apple-system, sans-serif;
       --font-display: 'Syne', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
-      --radius-sm: 6px;
-      --radius-md: 12px;
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
       --radius-pill: 999px;
       --transition: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -46,29 +63,49 @@
       color: var(--text-main);
       font-family: var(--font-heading);
       min-height: 100vh;
-      line-height: 1.5;
+      line-height: 1.55;
       overflow-x: hidden;
-      background-image: 
-        radial-gradient(circle at 50% 0%, rgba(255, 42, 42, 0.12) 0%, transparent 60%),
-        radial-gradient(circle at 80% 80%, rgba(255, 170, 51, 0.05) 0%, transparent 50%),
-        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-      background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
-      background-position: 0 0, 0 0, -1px -1px, -1px -1px;
+      position: relative;
     }
 
-    /* Ambient glow bar on top */
-    .top-glow-bar {
+    /* Ambient Background Glows (Inspirado no visual Foto 2) */
+    .ambient-glow {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--accent-red), var(--accent-amber), transparent);
-      z-index: 100;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(120px);
+      border-radius: 50%;
+      opacity: 0.35;
+      transform: translate3d(0, 0, 0);
     }
 
-    /* Papel de Fundo Profissional com Logotipo Marca D'água High-Tech */
+    .ambient-glow-1 {
+      top: -100px;
+      left: 10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, #b026ff 0%, #ff007a 50%, transparent 70%);
+    }
+
+    .ambient-glow-2 {
+      top: 30%;
+      right: -100px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, #00f0ff 0%, #7928ca 50%, transparent 70%);
+      opacity: 0.25;
+    }
+
+    .ambient-glow-3 {
+      bottom: 10%;
+      left: -50px;
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, #ff5500 0%, #b026ff 60%, transparent 70%);
+      opacity: 0.2;
+    }
+
+    /* Papel de Fundo Marca D'água com Logo Oficial e Cores da Página */
     .bg-watermark-container {
       position: fixed;
       inset: 0;
@@ -81,35 +118,15 @@
       justify-content: center;
     }
 
-    .bg-watermark-glow {
-      position: absolute;
-      width: 800px;
-      height: 800px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 42, 42, 0.09) 0%, rgba(255, 170, 51, 0.03) 40%, transparent 70%);
-      filter: blur(90px);
-      transform: translate3d(0, 0, 0);
-    }
-
     .bg-watermark-logo {
       position: absolute;
-      top: 25%;
-      width: 75vw;
-      max-width: 900px;
-      opacity: 0.065;
-      filter: drop-shadow(0 0 60px rgba(255, 42, 42, 0.6));
+      top: 32%;
+      width: 80vw;
+      max-width: 950px;
+      opacity: 0.045;
+      filter: drop-shadow(0 0 80px rgba(176, 38, 255, 0.7)) hue-rotate(270deg) saturate(1.8);
       transform: translateY(-50%) scale(1.05);
       animation: floatLogoSubtle 14s ease-in-out infinite alternate;
-    }
-
-    .bg-watermark-logo-lower {
-      position: absolute;
-      bottom: 8%;
-      width: 65vw;
-      max-width: 780px;
-      opacity: 0.045;
-      filter: drop-shadow(0 0 50px rgba(255, 42, 42, 0.4));
-      animation: floatLogoSubtleRev 16s ease-in-out infinite alternate;
     }
 
     @keyframes floatLogoSubtle {
@@ -117,17 +134,23 @@
       100% { transform: translateY(-46%) scale(1.06); }
     }
 
-    @keyframes floatLogoSubtleRev {
-      0% { transform: translateY(0) scale(1); }
-      100% { transform: translateY(-5%) scale(1.04); }
+    /* Top Glow Bar */
+    .top-glow-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-card-top);
+      z-index: 100;
     }
 
     /* Header */
     .briefing-header {
       border-bottom: 1px solid var(--border-subtle);
-      background: rgba(3, 3, 5, 0.85);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      background: rgba(6, 4, 11, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       position: sticky;
       top: 0;
       z-index: 50;
@@ -135,7 +158,7 @@
     }
 
     .header-container {
-      max-width: 1000px;
+      max-width: 1180px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -146,26 +169,28 @@
     .logo-area {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       text-decoration: none;
     }
 
     .logo-img {
-      height: 36px;
+      height: 38px;
       width: auto;
       object-fit: contain;
+      filter: drop-shadow(0 0 14px rgba(176, 38, 255, 0.5));
     }
 
     .logo-badge {
       font-family: var(--font-mono);
       font-size: 0.65rem;
-      letter-spacing: 1px;
-      color: var(--accent-red);
-      background: rgba(255, 42, 42, 0.1);
-      border: 1px solid rgba(255, 42, 42, 0.3);
-      padding: 3px 8px;
-      border-radius: var(--radius-sm);
+      letter-spacing: 1.2px;
+      color: #fff;
+      background: linear-gradient(135deg, rgba(224, 36, 195, 0.2), rgba(176, 38, 255, 0.2));
+      border: 1px solid rgba(224, 36, 195, 0.4);
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
       text-transform: uppercase;
+      font-weight: 600;
     }
 
     .header-back-link {
@@ -175,98 +200,253 @@
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
+      gap: 8px;
+      padding: 7px 16px;
       border-radius: var(--radius-pill);
       border: 1px solid var(--border-subtle);
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(255, 255, 255, 0.04);
       transition: var(--transition);
     }
 
     .header-back-link:hover {
       color: #fff;
-      border-color: rgba(255, 255, 255, 0.25);
-      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--neon-purple);
+      background: rgba(176, 38, 255, 0.15);
+      box-shadow: 0 0 16px rgba(176, 38, 255, 0.3);
       transform: translateX(-2px);
     }
 
     /* Main Container */
     .briefing-wrapper {
-      max-width: 860px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 40px 20px 80px;
+      padding: 40px 20px 90px;
       position: relative;
       z-index: 1;
     }
 
-    /* Hero / Intro */
-    .briefing-hero {
-      margin-bottom: 32px;
-      text-align: center;
+    /* HERO PRINCIPAL COM ESTILO DA FOTO 2 & FOTO DE JOSUÉ SANTOS (FOTO 3) */
+    .briefing-hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 40px;
+      padding: 30px;
+      background: linear-gradient(135deg, rgba(22, 14, 38, 0.75) 0%, rgba(10, 7, 20, 0.85) 100%);
+      border: 1px solid rgba(176, 38, 255, 0.25);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(176, 38, 255, 0.15);
+      position: relative;
+      overflow: hidden;
     }
 
-    .status-pill {
+    .briefing-hero-grid::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-card-top);
+    }
+
+    .hero-badge-tag {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       font-family: var(--font-mono);
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       letter-spacing: 1.5px;
-      color: var(--accent-red);
-      background: rgba(255, 42, 42, 0.08);
-      border: 1px solid rgba(255, 42, 42, 0.25);
-      padding: 5px 14px;
+      color: #fff;
+      background: linear-gradient(90deg, rgba(255, 0, 122, 0.25), rgba(176, 38, 255, 0.25));
+      border: 1px solid rgba(224, 36, 195, 0.5);
+      padding: 6px 16px;
       border-radius: var(--radius-pill);
-      margin-bottom: 16px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-weight: 700;
     }
 
-    .status-dot {
-      width: 6px;
-      height: 6px;
+    .badge-dot-neon {
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background: var(--accent-red);
-      box-shadow: 0 0 8px var(--accent-red);
-      animation: pulse 1.8s infinite;
+      background: var(--neon-cyan);
+      box-shadow: 0 0 10px var(--neon-cyan);
+      animation: pulseDot 1.6s infinite;
     }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(0.8); opacity: 0.5; }
     }
 
-    .hero-title {
+    .hero-headline {
       font-family: var(--font-display);
-      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      font-size: clamp(2rem, 3.8vw, 3rem);
       font-weight: 800;
       letter-spacing: -0.5px;
-      text-transform: uppercase;
-      color: #fff;
       line-height: 1.15;
-      margin-bottom: 12px;
+      color: #fff;
+      margin-bottom: 16px;
+      text-transform: uppercase;
     }
 
-    .hero-title .highlight {
-      background: linear-gradient(135deg, #fff 30%, var(--accent-red) 100%);
+    .hero-headline .gradient-text {
+      background: linear-gradient(135deg, #ff6b1a 0%, #e024c3 50%, #00f0ff 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .hero-desc {
+    .hero-subcopy {
       color: var(--text-muted);
-      font-size: 0.98rem;
-      max-width: 680px;
-      margin: 0 auto 28px;
+      font-size: 1.02rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
     }
 
-    /* Progress Widget */
-    .progress-card {
-      background: var(--bg-card);
+    .hero-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .hero-mini-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--border-subtle);
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+    }
+
+    /* CARD FOTO DE JOSUÉ SANTOS NO HERO (FOTO 3 COM NEON MAGENTA/AZUL) */
+    .hero-director-portrait {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .portrait-frame {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(176, 38, 255, 0.4);
+      background: #000;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.8), 0 0 35px rgba(224, 36, 195, 0.35);
+      transition: var(--transition);
+    }
+
+    .portrait-frame:hover {
+      border-color: var(--neon-cyan);
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.9), 0 0 45px rgba(0, 240, 255, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .portrait-img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      filter: contrast(1.08) brightness(1.02);
+    }
+
+    .portrait-overlay-glow {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 65%, rgba(6, 4, 11, 0.95) 100%);
+      pointer-events: none;
+    }
+
+    .portrait-badge {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      background: rgba(12, 8, 24, 0.9);
+      border: 1px solid rgba(176, 38, 255, 0.4);
+      padding: 10px 14px;
       border-radius: var(--radius-md);
-      padding: 16px 20px;
-      margin-bottom: 36px;
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .portrait-badge-title {
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .portrait-badge-role {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--neon-cyan);
+      letter-spacing: 0.8px;
+    }
+
+    /* TICKER RIBBON ANIMADO (Inspirado no visual da Foto 2: GRATUITO • INSCREVA-SE) */
+    .ticker-ribbon-wrap {
+      overflow: hidden;
+      background: linear-gradient(90deg, rgba(255, 85, 0, 0.15), rgba(224, 36, 195, 0.25), rgba(0, 240, 255, 0.15));
+      border-top: 1px solid rgba(176, 38, 255, 0.3);
+      border-bottom: 1px solid rgba(176, 38, 255, 0.3);
+      padding: 10px 0;
+      margin-bottom: 40px;
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
+    }
+
+    .ticker-track {
+      display: inline-flex;
+      gap: 30px;
+      animation: tickerScroll 24s linear infinite;
+    }
+
+    @keyframes tickerScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    .ticker-sep {
+      color: var(--neon-cyan);
+    }
+
+    /* PROGRESS BAR WIDGET */
+    .progress-widget {
+      background: var(--bg-card);
+      border: 1px solid rgba(176, 38, 255, 0.2);
+      border-radius: var(--radius-md);
+      padding: 18px 24px;
+      margin-bottom: 32px;
       backdrop-filter: blur(16px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
 
     .progress-info {
@@ -275,63 +455,63 @@
       align-items: center;
       margin-bottom: 10px;
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       color: var(--text-muted);
     }
 
     .progress-info .pct {
-      color: var(--accent-red);
-      font-weight: 700;
+      background: linear-gradient(90deg, #ff5500, #e024c3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
     }
 
-    .progress-bar-bg {
+    .progress-track {
       width: 100%;
-      height: 6px;
+      height: 7px;
       background: rgba(255, 255, 255, 0.08);
       border-radius: var(--radius-pill);
       overflow: hidden;
-      position: relative;
     }
 
-    .progress-bar-fill {
+    .progress-fill {
       height: 100%;
-      width: 10%;
-      background: linear-gradient(90deg, var(--accent-red), var(--accent-amber));
+      width: 15%;
+      background: var(--gradient-btn);
       border-radius: var(--radius-pill);
+      box-shadow: 0 0 12px rgba(224, 36, 195, 0.6);
       transition: width 0.35s ease;
-      box-shadow: 0 0 10px var(--accent-red-glow);
     }
 
-    /* Steps & Sections */
+    /* FORM CARDS COM ASPECTO DE DESIGN DA FOTO 2 */
     .step-card {
-      background: rgba(14, 14, 18, 0.78);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 30px;
-      margin-bottom: 24px;
+      background: var(--bg-card);
+      border: 1px solid rgba(176, 38, 255, 0.22);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      margin-bottom: 28px;
       position: relative;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
       transition: var(--transition);
       overflow: hidden;
     }
 
-    .step-card::after {
+    .step-card::before {
       content: '';
       position: absolute;
-      top: -30px;
-      right: -30px;
-      width: 140px;
-      height: 140px;
-      background: url('assets/logo-red.png') no-repeat center;
-      background-size: contain;
-      opacity: 0.03;
-      pointer-events: none;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2.5px;
+      background: var(--gradient-card-top);
+      opacity: 0.8;
     }
 
     .step-card:focus-within {
-      border-color: rgba(255, 42, 42, 0.4);
-      box-shadow: 0 0 25px rgba(255, 42, 42, 0.12);
+      border-color: var(--neon-purple);
+      box-shadow: 0 0 35px rgba(176, 38, 255, 0.25);
     }
 
     .step-badge {
@@ -339,70 +519,64 @@
       align-items: center;
       gap: 6px;
       font-family: var(--font-mono);
-      font-size: 0.68rem;
-      letter-spacing: 1px;
-      color: var(--accent-red);
-      margin-bottom: 8px;
+      font-size: 0.7rem;
+      letter-spacing: 1.2px;
+      color: #fff;
+      background: linear-gradient(90deg, rgba(224, 36, 195, 0.25), rgba(176, 38, 255, 0.25));
+      border: 1px solid rgba(224, 36, 195, 0.4);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 12px;
       text-transform: uppercase;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .step-title {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 6px;
-      letter-spacing: -0.2px;
-    }
-
-    .step-prompt {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-      line-height: 1.45;
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
     }
 
     .prompt-speech {
       background: rgba(255, 255, 255, 0.03);
-      border-left: 2px solid var(--accent-red);
-      padding: 10px 14px;
+      border-left: 3px solid var(--neon-magenta);
+      padding: 12px 16px;
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      margin-bottom: 18px;
+      margin-bottom: 22px;
       font-style: italic;
-      color: #e2e2ec;
-      font-size: 0.9rem;
+      color: #eae5f5;
+      font-size: 0.94rem;
+      line-height: 1.5;
     }
 
-    /* Form Inputs */
+    /* Input Grid */
     .input-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-
-    .input-grid.full {
-      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
     }
 
     .form-group {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 7px;
     }
 
     .form-label {
       font-family: var(--font-mono);
       font-size: 0.72rem;
       color: var(--text-muted);
-      letter-spacing: 0.5px;
+      letter-spacing: 0.6px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .form-label .required {
-      color: var(--accent-red);
+      color: var(--neon-magenta);
     }
 
     .form-input,
@@ -413,25 +587,25 @@
       border-radius: var(--radius-sm);
       color: #fff;
       font-family: var(--font-heading);
-      font-size: 0.92rem;
-      padding: 12px 14px;
+      font-size: 0.94rem;
+      padding: 13px 15px;
       outline: none;
       transition: var(--transition);
       width: 100%;
     }
 
     .form-textarea {
-      min-height: 90px;
+      min-height: 95px;
       resize: vertical;
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
     .form-input:focus,
     .form-textarea:focus,
     .form-select:focus {
-      border-color: var(--accent-red);
-      box-shadow: 0 0 14px var(--accent-red-glow);
-      background: rgba(14, 14, 20, 0.95);
+      border-color: var(--neon-purple);
+      box-shadow: 0 0 16px rgba(176, 38, 255, 0.35);
+      background: rgba(18, 12, 30, 0.95);
     }
 
     .form-input::placeholder,
@@ -439,42 +613,43 @@
       color: var(--text-dim);
     }
 
-    /* Option Cards (Radio / Checkbox tiles) */
+    /* Option Cards Tiles (Aspecto Foto 2) */
     .options-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 12px;
-      margin-top: 8px;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 14px;
+      margin-top: 10px;
     }
 
     .option-label {
       display: flex;
       align-items: flex-start;
-      gap: 12px;
-      padding: 14px;
-      background: rgba(255, 255, 255, 0.025);
+      gap: 14px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.03);
       border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-sm);
+      border-radius: var(--radius-md);
       cursor: pointer;
       transition: var(--transition);
       user-select: none;
+      position: relative;
     }
 
     .option-label:hover {
-      border-color: rgba(255, 255, 255, 0.2);
-      background: rgba(255, 255, 255, 0.05);
-      transform: translateY(-1px);
+      border-color: rgba(176, 38, 255, 0.4);
+      background: rgba(176, 38, 255, 0.08);
+      transform: translateY(-2px);
     }
 
     .option-label input[type="radio"],
     .option-label input[type="checkbox"] {
       appearance: none;
       -webkit-appearance: none;
-      width: 18px;
-      height: 18px;
+      width: 19px;
+      height: 19px;
       border: 1.5px solid var(--border-subtle);
-      border-radius: 4px;
-      background: rgba(0, 0, 0, 0.4);
+      border-radius: 5px;
+      background: rgba(0, 0, 0, 0.5);
       margin-top: 2px;
       flex-shrink: 0;
       position: relative;
@@ -487,16 +662,16 @@
     }
 
     .option-label input:checked {
-      border-color: var(--accent-red);
-      background: var(--accent-red);
-      box-shadow: 0 0 8px var(--accent-red-glow);
+      border-color: var(--neon-magenta);
+      background: linear-gradient(135deg, var(--neon-magenta), var(--neon-purple));
+      box-shadow: 0 0 10px rgba(224, 36, 195, 0.6);
     }
 
     .option-label input[type="checkbox"]:checked::after {
       content: '';
       position: absolute;
-      top: 2px;
-      left: 5px;
+      top: 3px;
+      left: 6px;
       width: 4px;
       height: 8px;
       border: solid #fff;
@@ -516,118 +691,185 @@
     }
 
     .option-label:has(input:checked) {
-      border-color: var(--accent-red);
-      background: rgba(255, 42, 42, 0.08);
-      box-shadow: 0 0 15px rgba(255, 42, 42, 0.15);
+      border-color: var(--neon-magenta);
+      background: rgba(224, 36, 195, 0.12);
+      box-shadow: 0 0 20px rgba(224, 36, 195, 0.25);
     }
 
     .option-content {
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 4px;
     }
 
     .option-title {
-      font-size: 0.88rem;
-      font-weight: 600;
+      font-size: 0.92rem;
+      font-weight: 700;
       color: #fff;
     }
 
     .option-desc {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: var(--text-muted);
-      line-height: 1.35;
+      line-height: 1.4;
     }
 
-    /* Transition feedback note */
+    /* Feedback Note */
     .step-feedback {
-      margin-top: 16px;
-      padding: 10px 14px;
-      background: rgba(255, 170, 51, 0.06);
-      border: 1px dashed rgba(255, 170, 51, 0.3);
+      margin-top: 18px;
+      padding: 12px 16px;
+      background: rgba(0, 240, 255, 0.06);
+      border: 1px dashed rgba(0, 240, 255, 0.35);
       border-radius: var(--radius-sm);
       font-family: var(--font-mono);
-      font-size: 0.74rem;
-      color: var(--accent-amber);
+      font-size: 0.76rem;
+      color: var(--neon-cyan);
       display: flex;
       align-items: center;
+      gap: 10px;
+    }
+
+    /* SEÇÃO QUEM VAI CONDUZIR SEU PROJETO (Inspirada no "Quem te ensinará" da Foto 2) */
+    .director-feature-card {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 32px;
+      align-items: center;
+      padding: 32px;
+      background: linear-gradient(135deg, rgba(22, 14, 38, 0.8) 0%, rgba(10, 7, 20, 0.95) 100%);
+      border: 1px solid rgba(176, 38, 255, 0.3);
+      border-radius: var(--radius-lg);
+      margin-bottom: 32px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
+    }
+
+    .director-feature-img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(0, 240, 255, 0.4);
+      box-shadow: 0 0 25px rgba(0, 240, 255, 0.25);
+    }
+
+    .director-feature-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .director-feature-role {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--neon-magenta);
+      margin-bottom: 14px;
+      letter-spacing: 1px;
+    }
+
+    .director-feature-bio {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .director-feature-tags {
+      display: flex;
+      flex-wrap: wrap;
       gap: 8px;
     }
 
-    /* Submit Block */
+    .feature-tag-pill {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: #fff;
+    }
+
+    /* SUBMIT CTA SECTION (Estilo Botão Foto 2) */
     .submit-section {
-      background: linear-gradient(180deg, var(--bg-card) 0%, rgba(10, 10, 14, 0.95) 100%);
-      border: 1px solid rgba(255, 42, 42, 0.35);
-      border-radius: var(--radius-md);
-      padding: 36px 30px;
+      background: linear-gradient(135deg, rgba(28, 18, 48, 0.9) 0%, rgba(12, 8, 24, 0.98) 100%);
+      border: 1px solid rgba(224, 36, 195, 0.5);
+      border-radius: var(--radius-lg);
+      padding: 42px 30px;
       text-align: center;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 42, 42, 0.15);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 45px rgba(224, 36, 195, 0.25);
       margin-top: 40px;
       position: relative;
     }
 
     .submit-title {
       font-family: var(--font-display);
-      font-size: 1.6rem;
+      font-size: clamp(1.6rem, 3.5vw, 2.3rem);
       font-weight: 800;
       text-transform: uppercase;
       color: #fff;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+    }
+
+    .submit-title .gradient-text {
+      background: linear-gradient(90deg, #ff5500, #e024c3, #00f0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .submit-subtitle {
       color: var(--text-muted);
-      font-size: 0.92rem;
-      max-width: 600px;
-      margin: 0 auto 24px;
+      font-size: 0.98rem;
+      max-width: 660px;
+      margin: 0 auto 28px;
     }
 
     .btn-submit-briefing {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 14px;
       width: 100%;
-      max-width: 520px;
-      background: linear-gradient(135deg, var(--accent-red) 0%, #d81b1b 100%);
+      max-width: 560px;
+      background: var(--gradient-btn);
       color: #fff;
-      font-family: var(--font-mono);
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.8px;
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.6px;
       text-transform: uppercase;
-      padding: 18px 28px;
+      padding: 20px 32px;
       border-radius: var(--radius-pill);
       border: none;
       cursor: pointer;
-      box-shadow: 0 4px 25px rgba(255, 42, 42, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 35px rgba(224, 36, 195, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.35);
       transition: var(--transition);
       text-decoration: none;
     }
 
     .btn-submit-briefing:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 35px rgba(255, 42, 42, 0.7);
-      background: linear-gradient(135deg, var(--accent-red-hover) 0%, #e62020 100%);
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 12px 45px rgba(224, 36, 195, 0.85);
+      background: var(--gradient-btn-hover);
     }
 
     .submit-note {
-      margin-top: 14px;
+      margin-top: 16px;
       font-family: var(--font-mono);
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
     }
 
-    /* Modal de Sucesso / Cópia */
+    /* MODAL */
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(14px);
       z-index: 200;
       display: none;
       align-items: center;
@@ -640,22 +882,22 @@
     }
 
     .modal-box {
-      background: #0d0d12;
-      border: 1px solid rgba(255, 42, 42, 0.4);
-      border-radius: var(--radius-md);
-      max-width: 600px;
+      background: #0f0a1c;
+      border: 1px solid rgba(224, 36, 195, 0.5);
+      border-radius: var(--radius-lg);
+      max-width: 620px;
       width: 100%;
-      padding: 30px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(255, 42, 42, 0.2);
+      padding: 34px;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.95), 0 0 50px rgba(224, 36, 195, 0.3);
       text-align: center;
     }
 
     .modal-icon {
-      width: 50px;
-      height: 50px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
-      background: rgba(255, 42, 42, 0.15);
-      color: var(--accent-red);
+      background: rgba(224, 36, 195, 0.15);
+      color: var(--neon-magenta);
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -663,30 +905,31 @@
     }
 
     .modal-title {
-      font-size: 1.4rem;
-      font-weight: 700;
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #fff;
       margin-bottom: 8px;
     }
 
     .modal-desc {
       color: var(--text-muted);
-      font-size: 0.88rem;
-      margin-bottom: 20px;
+      font-size: 0.9rem;
+      margin-bottom: 22px;
     }
 
     .modal-preview {
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.65);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
-      padding: 14px;
+      padding: 16px;
       text-align: left;
       font-family: var(--font-mono);
-      font-size: 0.74rem;
-      max-height: 180px;
+      font-size: 0.75rem;
+      max-height: 200px;
       overflow-y: auto;
-      color: #ccc;
+      color: #d6cee8;
       white-space: pre-wrap;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     .modal-btns {
@@ -697,23 +940,24 @@
     }
 
     .btn-modal-action {
-      padding: 12px 20px;
+      padding: 12px 22px;
       border-radius: var(--radius-pill);
       font-family: var(--font-mono);
-      font-size: 0.78rem;
-      font-weight: 600;
+      font-size: 0.8rem;
+      font-weight: 700;
       cursor: pointer;
       text-decoration: none;
       transition: var(--transition);
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
 
     .btn-modal-action.primary {
-      background: var(--accent-red);
+      background: var(--gradient-btn);
       color: #fff;
       border: none;
+      box-shadow: 0 4px 18px rgba(224, 36, 195, 0.45);
     }
 
     .btn-modal-action.secondary {
@@ -727,10 +971,31 @@
       text-align: center;
       margin-top: 60px;
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       color: var(--text-dim);
       border-top: 1px solid var(--border-subtle);
-      padding-top: 24px;
+      padding-top: 26px;
+    }
+
+    @media (max-width: 860px) {
+      .briefing-hero-grid {
+        grid-template-columns: 1fr;
+        padding: 24px 20px;
+      }
+      .portrait-frame {
+        max-width: 320px;
+      }
+      .director-feature-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .director-feature-img {
+        max-width: 260px;
+        margin: 0 auto;
+      }
+      .director-feature-tags {
+        justify-content: center;
+      }
     }
 
     @media (max-width: 640px) {
@@ -741,14 +1006,11 @@
         grid-template-columns: 1fr;
       }
       .step-card {
-        padding: 20px 16px;
-      }
-      .submit-section {
-        padding: 24px 16px;
+        padding: 24px 18px;
       }
       .btn-submit-briefing {
-        padding: 16px 20px;
-        font-size: 0.85rem;
+        padding: 17px 22px;
+        font-size: 0.88rem;
       }
     }
   </style>
@@ -757,14 +1019,17 @@
 
   <div class="top-glow-bar"></div>
 
-  <!-- Papel de Fundo com Logotipo Oficial Marca D'água High-Tech -->
+  <!-- Ambient Glows Inspirados na Foto 2 -->
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+  <div class="ambient-glow ambient-glow-3"></div>
+
+  <!-- Papel de Fundo com Logotipo Oficial Marca D'água com as Cores da Página -->
   <div class="bg-watermark-container" aria-hidden="true">
-    <div class="bg-watermark-glow"></div>
     <img src="assets/logo-red.png" alt="" class="bg-watermark-logo">
-    <img src="assets/logo-red.png" alt="" class="bg-watermark-logo-lower">
   </div>
 
-  <!-- Header -->
+  <!-- Header Oficial -->
   <header class="briefing-header">
     <div class="header-container">
       <a href="index.html" class="logo-area" title="Voltar para a página principal">
@@ -780,33 +1045,77 @@
 
   <div class="briefing-wrapper">
     
-    <!-- Hero Header -->
-    <div class="briefing-hero">
-      <div class="status-pill">
-        <span class="status-dot"></span>
-        <span>ETAPA DE BRIEFING & DIAGNÓSTICO</span>
+    <!-- HERO PRINCIPAL (Inspirado no visual da Foto 2 + Foto 3 de Josué Santos) -->
+    <div class="briefing-hero-grid">
+      <div class="hero-left-content">
+        <div class="hero-badge-tag">
+          <span class="badge-dot-neon"></span>
+          <span>ESTÚDIO DE CRIAÇÃO COM IA & DIREÇÃO HUMANA</span>
+        </div>
+        
+        <h1 class="hero-headline">
+          VAMOS DESENHAR A <br>
+          <span class="gradient-text">SOLUÇÃO IDEAL</span> PARA SEU NEGÓCIO
+        </h1>
+        
+        <p class="hero-subcopy">
+          Preencha o diagnóstico estratégico abaixo. Nós mapeamos a dor do seu negócio, alinhamos seu objetivo comercial e preparamos uma proposta sob medida com entregas, prazo recorde e investimento.
+        </p>
+
+        <div class="hero-pills-row">
+          <span class="hero-mini-pill">⚡ Entrega Ágil em 3 a 5 Dias Úteis</span>
+          <span class="hero-mini-pill">🎬 Formatos 9:16 (Reels) e 16:9 (Cinema)</span>
+          <span class="hero-mini-pill">👤 Avatares Virtuais & IA Generativa</span>
+        </div>
       </div>
-      <h1 class="hero-title">VAMOS DESENHAR A <span class="highlight">SOLUÇÃO IDEAL</span> PARA SEU NEGÓCIO</h1>
-      <p class="hero-desc">
-        Preencha as etapas rápidas abaixo para entendermos o seu momento, mapearmos a sua dor principal e prepararmos uma proposta sob medida com entregáveis, prazo exato e investimento.
-      </p>
+
+      <!-- Foto de Josué Santos (Foto 3 com Capuz e Iluminação Neon Magenta/Azul) -->
+      <div class="hero-director-portrait">
+        <div class="portrait-frame">
+          <img src="assets/josue-hoodie-neon.jpg" alt="Josué Santos - Diretor Criativo e Especialista em IA" class="portrait-img">
+          <div class="portrait-overlay-glow"></div>
+          <div class="portrait-badge">
+            <div>
+              <div class="portrait-badge-title">JOSUÉ SANTOS</div>
+              <div class="portrait-badge-role">DIRETOR CRIATIVO // IA STUDIO</div>
+            </div>
+            <span class="badge-dot-neon"></span>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Barra de Progresso Interativa -->
-    <div class="progress-card">
+    <!-- TICKER RIBBON ANIMADO (Inspirado na Foto 2) -->
+    <div class="ticker-ribbon-wrap" aria-hidden="true">
+      <div class="ticker-track">
+        <span class="ticker-item">⚡ DIAGNÓSTICO ESTRATÉGICO <span class="ticker-sep">•</span></span>
+        <span class="ticker-item">🎬 VÍDEOS COM IA 9:16 & 16:9 <span class="ticker-sep">•</span></span>
+        <span class="ticker-item">🚀 ENTREGA RECORDE EM 3 A 5 DIAS ÚTEIS <span class="ticker-sep">•</span></span>
+        <span class="ticker-item">💡 ROTEIRO & DIREÇÃO CINEMATOGRÁFICA <span class="ticker-sep">•</span></span>
+        <span class="ticker-item">🔒 ATENDIMENTO EXCLUSIVO WHATSAPP <span class="ticker-sep">•</span></span>
+        <span class="ticker-item">⚡ DIAGNÓSTICO ESTRATÉGICO <span class="ticker-sep">•</span></span>
+        <span class="ticker-item">🎬 VÍDEOS COM IA 9:16 & 16:9 <span class="ticker-sep">•</span></span>
+        <span class="ticker-item">🚀 ENTREGA RECORDE EM 3 A 5 DIAS ÚTEIS <span class="ticker-sep">•</span></span>
+        <span class="ticker-item">💡 ROTEIRO & DIREÇÃO CINEMATOGRÁFICA <span class="ticker-sep">•</span></span>
+        <span class="ticker-item">🔒 ATENDIMENTO EXCLUSIVO WHATSAPP <span class="ticker-sep">•</span></span>
+      </div>
+    </div>
+
+    <!-- Barra de Progresso Dinâmica -->
+    <div class="progress-widget">
       <div class="progress-info">
         <span>STATUS DO DIAGNÓSTICO</span>
-        <span class="pct" id="progressPct">10% CONCLUÍDO</span>
+        <span class="pct" id="progressPct">15% CONCLUÍDO</span>
       </div>
-      <div class="progress-bar-bg">
-        <div class="progress-bar-fill" id="progressBar"></div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressBar"></div>
       </div>
     </div>
 
-    <!-- FORMULÁRIO -->
+    <!-- FORMULÁRIO COMPLETO -->
     <form id="briefingForm">
 
-      <!-- ETAPA 01: IDENTIFICAÇÃO & O NEGÓCIO -->
+      <!-- ETAPA 01: CONHECER O NEGÓCIO -->
       <section class="step-card">
         <span class="step-badge">ETAPA 01 // CONHECER O NEGÓCIO</span>
         <h2 class="step-title">Quem é você e qual a sua marca?</h2>
@@ -846,11 +1155,11 @@
         </div>
       </section>
 
-      <!-- ETAPA 02: A DOR & O DESAFIO ATUAL (CRUCIAL PARA FECHAMENTO) -->
+      <!-- ETAPA 02: O DIAGNÓSTICO DA DOR (CRUCIAL PARA FECHAMENTO) -->
       <section class="step-card">
         <span class="step-badge">ETAPA 02 // O DIAGNÓSTICO DA DOR</span>
         <h2 class="step-title">Qual é o maior desafio ou dor da sua marca hoje?</h2>
-        <p class="step-prompt">Selecione o principal obstáculo que te motivou a buscar essa solução agora:</p>
+        <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px;">Selecione o principal obstáculo que te motivou a buscar essa solução agora:</p>
 
         <div class="options-grid">
           <label class="option-label">
@@ -878,7 +1187,7 @@
             <input type="radio" name="clientPain" value="Dificuldade em explicar um produto ou serviço complexo">
             <div class="option-content">
               <span class="option-title">Explicação Complexa</span>
-              <span class="option-desc">O cliente não entende rápido o valor do meu produto ou serviço.</span>
+              <span class="option-desc">O cliente não entende rápido o valor e diferenciais do meu serviço.</span>
             </div>
           </label>
           <label class="option-label">
@@ -892,31 +1201,31 @@
             <input type="radio" name="clientPain" value="Lançamento urgente de um novo produto ou campanha">
             <div class="option-content">
               <span class="option-title">Lançamento Urgente</span>
-              <span class="option-desc">Preciso colocar uma campanha no ar nos próximos dias com impacto máximo.</span>
+              <span class="option-desc">Preciso colocar uma campanha no ar nos próximos dias com impacto cinematográfico.</span>
             </div>
           </label>
         </div>
 
-        <div class="form-group" style="margin-top: 16px;">
+        <div class="form-group" style="margin-top: 18px;">
           <label class="form-label">DETALHE OUTRA DOR OU DESAFIO (OPCIONAL)</label>
-          <input type="text" id="clientPainCustom" class="form-input" placeholder="Se quiser complementar em suas próprias palavras...">
+          <input type="text" id="clientPainCustom" class="form-input" placeholder="Se quiser complementar com suas próprias palavras...">
         </div>
       </section>
 
       <!-- ETAPA 03: OBJETIVO & CTA -->
       <section class="step-card">
-        <span class="step-badge">ETAPA 03 // O OBJETIVO DO PROJETO</span>
+        <span class="step-badge">ETAPA 03 // DEFINIR O OBJETIVO</span>
         <h2 class="step-title">O que você mais deseja alcançar com esse projeto?</h2>
         <div class="prompt-speech">
-          “O que você mais deseja alcançar: divulgar sua marca, receber contatos pelo WhatsApp, gerar pedidos de orçamento ou vender um produto?”
+          “O que você mais deseja alcançar com esse projeto: divulgar sua marca, receber contatos pelo WhatsApp, gerar pedidos de orçamento ou vender um produto?”
         </div>
 
         <div class="options-grid">
           <label class="option-label">
-            <input type="radio" name="clientGoal" value="Receber contatos diretos no WhatsApp" checked>
+            <input type="radio" name="clientGoal" value="Receber contatos diretos e qualificados no WhatsApp" checked>
             <div class="option-content">
               <span class="option-title">Mensagens no WhatsApp</span>
-              <span class="option-desc">Gerar fluxo constante de potenciais clientes chamando no chat.</span>
+              <span class="option-desc">Gerar fluxo constante de potenciais clientes chamando no WhatsApp.</span>
             </div>
           </label>
           <label class="option-label">
@@ -934,7 +1243,7 @@
             </div>
           </label>
           <label class="option-label">
-            <input type="radio" name="clientGoal" value="Posicionamento de autoridade e reconhecimento de marca">
+            <input type="radio" name="clientGoal" value="Construir autoridade inabalável e reconhecimento de marca">
             <div class="option-content">
               <span class="option-title">Autoridade & Branding</span>
               <span class="option-desc">Construir presença premium e ser a referência número 1 do setor.</span>
@@ -942,11 +1251,11 @@
           </label>
         </div>
 
-        <div class="form-group" style="margin-top: 18px;">
+        <div class="form-group" style="margin-top: 20px;">
           <label class="form-label">CHAMADA PARA AÇÃO (CTA) PRINCIPAL DESEJADA</label>
           <select id="clientCta" class="form-select">
             <option value="Fale pelo WhatsApp">“Fale pelo WhatsApp” (Conversão Imediata)</option>
-            <option value="Peça um Orçamento">“Peça um Orçamento” (Serviços e Consultoria)</option>
+            <option value="Peça um Orçamento">“Peça um Orçamento” (Serviços e Consultorias)</option>
             <option value="Compre Agora">“Compre Agora” (E-commerce / Infoproduto)</option>
             <option value="Agende uma Sessão Estratégica">“Agende uma Sessão Estratégica”</option>
             <option value="Saiba Mais">“Saiba Mais”</option>
@@ -979,7 +1288,7 @@
 
         <div class="form-group">
           <label class="form-label">O QUE SEUS CLIENTES MAIS VALORIZAM AO ESCOLHER SEU SERVIÇO?</label>
-          <textarea id="clientAudienceNeeds" class="form-textarea" placeholder="Ex: Rapidez, confiança, preço justo, exclusividade, atendimento humanizado..."></textarea>
+          <textarea id="clientAudienceNeeds" class="form-textarea" placeholder="Ex: Rapidez, confiança, exclusividade, atendimento humanizado..."></textarea>
         </div>
 
         <div class="step-feedback">
@@ -1073,11 +1382,11 @@
         </div>
       </section>
 
-      <!-- ETAPA 07: FORMATO DA SOLUÇÃO & ENTREGÁVEIS DESEJADOS -->
+      <!-- ETAPA 07: FORMATO DA SOLUÇÃO & ENTREGÁVEIS -->
       <section class="step-card">
         <span class="step-badge">ETAPA 07 // A SOLUÇÃO IDEAL</span>
         <h2 class="step-title">Quais entregáveis fazem parte da sua necessidade?</h2>
-        <p class="step-prompt">Selecione uma ou mais soluções que você gostaria de incluir na sua proposta:</p>
+        <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px;">Selecione uma ou mais soluções que você gostaria de incluir na sua proposta:</p>
 
         <div class="options-grid">
           <label class="option-label">
@@ -1145,7 +1454,7 @@
       <section class="step-card">
         <span class="step-badge">ETAPA 09 // PRAZO & PLANEJAMENTO</span>
         <h2 class="step-title">Qual é a sua expectativa de prazo para esse projeto?</h2>
-        <p class="step-prompt">Com a tecnologia generativa da JosueSantosTech, conseguimos entregas em prazos recordes:</p>
+        <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px;">Com a tecnologia generativa da JosueSantosTech, entregamos em velocidade recorde:</p>
 
         <div class="options-grid">
           <label class="option-label">
@@ -1172,20 +1481,42 @@
         </div>
       </section>
 
-      <!-- BLOCO DE SUBMISSÃO E FECHAMENTO -->
+      <!-- QUEM VAI CONDUZIR SEU PROJETO (Inspirado no card da Foto 2) -->
+      <div class="director-feature-card">
+        <img src="assets/josue-hoodie-neon.jpg" alt="Josué Santos" class="director-feature-img">
+        <div class="director-feature-info">
+          <h3>JOSUÉ SANTOS</h3>
+          <p class="director-feature-role">// DIRETOR DE CRIAÇÃO, ESPECIALISTA EM IA & WEB</p>
+          <p class="director-feature-bio">
+            "A inteligência artificial não substitui a sensibilidade humana: ela multiplica nossa imaginação. Meu papel é guiar a tecnologia para que ela sirva a histórias reais, emoções autênticas e resultados de negócio concretos para sua marca liderar o mercado."
+          </p>
+          <div class="director-feature-tags">
+            <span class="feature-tag-pill">DIREÇÃO DE ARTE</span>
+            <span class="feature-tag-pill">CINEMATOGRAFIA COM IA</span>
+            <span class="feature-tag-pill">STORYTELLING</span>
+            <span class="feature-tag-pill">LANDING PAGES DE ALTA CONVERSÃO</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUBMISSÃO E FECHAMENTO -->
       <div class="submit-section">
-        <span class="status-pill">
-          <span class="status-dot"></span>
-          <span>DIAGNÓSTICO PRONTO PARA ENVIO</span>
-        </span>
-        <h2 class="submit-title">RECEBER PROPOSTA & INICIAR PROJETO</h2>
+        <div class="hero-badge-tag" style="margin-bottom: 14px;">
+          <span class="badge-dot-neon"></span>
+          <span>DIAGNÓSTICO PRONTO PARA TRANSMISSÃO</span>
+        </div>
+        
+        <h2 class="submit-title">
+          RECEBER PROPOSTA & <span class="gradient-text">INICIAR PROJETO</span>
+        </h2>
+        
         <p class="submit-subtitle">
-          Ao clicar no botão abaixo, suas respostas serão compiladas em um resumo estruturado e enviadas diretamente para o WhatsApp de <strong>Josué Santos</strong>. Você receberá a proposta detalhada com entregas, prazo e investimento.
+          Ao clicar no botão abaixo, suas respostas serão compiladas em um resumo estruturado e transmitidas diretamente para o WhatsApp oficial de <strong>Josué Santos</strong> (+55 61 98211-6291). Você receberá a proposta detalhada com entregas, prazo e investimento.
         </p>
 
         <button type="submit" class="btn-submit-briefing" id="btnSubmitBriefing">
-          <span>ENVIAR BRIEFING PARA JOSUÉ SANTOS NO WHATSAPP</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span>TRANSMITIR BRIEFING NO WHATSAPP</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
 
         <div class="submit-note">
@@ -1206,7 +1537,7 @@
   <div class="modal-overlay" id="briefingModal">
     <div class="modal-box">
       <div class="modal-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
       <h3 class="modal-title">Briefing Compilado com Sucesso!</h3>
       <p class="modal-desc">Seu diagnóstico estratégico está pronto. Uma janela do WhatsApp oficial de Josué Santos foi aberta com os dados. Você também pode copiar o resumo abaixo:</p>
@@ -1215,11 +1546,11 @@
 
       <div class="modal-btns">
         <button type="button" class="btn-modal-action primary" id="btnReopenWhatsApp">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.087-.177.181-.076.355.101.173.449.741.964 1.2.662.591 1.221.774 1.394.861.173.086.275.072.376-.044.101-.116.433-.506.549-.679.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.825z"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.087-.177.181-.076.355.101.173.449.741.964 1.2.662.591 1.221.774 1.394.861.173.086.275.072.376-.044.101-.116.433-.506.549-.679.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.825z"/></svg>
           <span>Abrir WhatsApp Novamente</span>
         </button>
         <button type="button" class="btn-modal-action secondary" id="btnCopyBriefing">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
           <span id="copyBtnLabel">Copiar Resumo</span>
         </button>
         <button type="button" class="btn-modal-action secondary" id="btnCloseModal">Fechar</button>
