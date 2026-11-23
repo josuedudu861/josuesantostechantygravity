@@ -7,6 +7,24 @@
   <meta name="description" content="Formulário de diagnóstico e briefing estratégico de alta conversão para produção de vídeos com IA, landing pages e direção de arte cinematográfica.">
   <meta name="theme-color" content="#07040d">
   
+  <!-- Diretivas de Segurança & Proteção de Cabeçalho (OWASP Hardening) -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; media-src 'self' data: https: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me;">
+
+  <!-- Proteção Anti-Clickjacking (OWASP Defense) -->
+  <style id="antiClickjack">body{display:none !important;}</style>
+  <script>
+    if (self === top) {
+      var ac = document.getElementById("antiClickjack");
+      if (ac && ac.parentNode) ac.parentNode.removeChild(ac);
+    } else {
+      top.location = self.location;
+    }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
@@ -1599,20 +1617,34 @@
         const segment = document.getElementById('clientSegment').value.trim() || 'Não especificado';
         const product = document.getElementById('clientProduct').value.trim();
         
+        function sanitizeText(str, maxLen = 400) {
+          if (!str) return '';
+          return String(str)
+            .replace(/[<>]/g, '')
+            .slice(0, maxLen);
+        }
+
+        // Extração com higienização estrita
+        const name = sanitizeText(document.getElementById('clientName').value.trim(), 120);
+        const phone = sanitizeText(document.getElementById('clientPhone').value.trim(), 35).replace(/[^\d+()\s-]/g, '');
+        const company = sanitizeText(document.getElementById('clientCompany').value.trim(), 120);
+        const segment = sanitizeText(document.getElementById('clientSegment').value.trim(), 100);
+        const product = sanitizeText(document.getElementById('clientProduct').value.trim(), 1000);
+
         // Dor
         const painEl = form.querySelector('input[name="clientPain"]:checked');
-        const customPain = document.getElementById('clientPainCustom').value.trim();
+        const customPain = sanitizeText(document.getElementById('clientPainCustom').value.trim(), 500);
         const pain = customPain ? `${painEl ? painEl.value : ''} (${customPain})` : (painEl ? painEl.value : 'Não informado');
 
         // Objetivo & CTA
         const goalEl = form.querySelector('input[name="clientGoal"]:checked');
         const goal = goalEl ? goalEl.value : 'Não informado';
-        const cta = document.getElementById('clientCta').value;
+        const cta = sanitizeText(document.getElementById('clientCta').value, 150);
 
         // Público & Região
-        const region = document.getElementById('clientRegion').value.trim() || 'Brasil';
-        const audience = document.getElementById('clientAudience').value.trim() || 'Consumidor / B2B';
-        const audienceNeeds = document.getElementById('clientAudienceNeeds').value.trim() || 'Qualidade e agilidade';
+        const region = sanitizeText(document.getElementById('clientRegion').value.trim(), 100) || 'Brasil';
+        const audience = sanitizeText(document.getElementById('clientAudience').value.trim(), 300) || 'Consumidor / B2B';
+        const audienceNeeds = sanitizeText(document.getElementById('clientAudienceNeeds').value.trim(), 300) || 'Qualidade e agilidade';
 
         // Tom de voz
         const tones = [];
@@ -1622,7 +1654,12 @@
         // Identidade
         const brandingEl = form.querySelector('input[name="clientBranding"]:checked');
         const branding = brandingEl ? brandingEl.value : 'A definir';
-        const materialsUrl = document.getElementById('clientMaterialsUrl').value.trim() || 'Nenhum link fornecido';
+        let rawUrl = document.getElementById('clientMaterialsUrl').value.trim();
+        let materialsUrl = 'Nenhum link fornecido';
+        if (rawUrl) {
+          rawUrl = rawUrl.replace(/^(javascript|data|vbscript):/gi, '').slice(0, 300);
+          materialsUrl = sanitizeText(rawUrl, 300);
+        }
 
         // Serviços desejados
         const services = [];
@@ -1630,8 +1667,8 @@
         const servicesStr = services.length ? services.join('\n• ') : 'Vídeo com IA e Solução Web';
 
         // Referências
-        const refs = document.getElementById('clientReferences').value.trim() || 'Nenhuma informada';
-        const refDetails = document.getElementById('clientRefDetails').value.trim() || 'Padrão estético do estúdio';
+        const refs = sanitizeText(document.getElementById('clientReferences').value.trim(), 500) || 'Nenhuma informada';
+        const refDetails = sanitizeText(document.getElementById('clientRefDetails').value.trim(), 500) || 'Padrão estético do estúdio';
 
         // Prazo
         const deadlineEl = form.querySelector('input[name="clientDeadline"]:checked');
@@ -1684,8 +1721,8 @@ _Briefing gerado via josuesantosia.com.br/briefing.html_`;
         const waUrl = `https://wa.me/5561982116291?text=${encodedText}`;
         currentGeneratedUrl = waUrl;
 
-        // Abre no WhatsApp imediatamente em nova aba
-        window.open(waUrl, '_blank');
+        // Abre no WhatsApp imediatamente em nova aba segura
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
 
         // Exibe modal com o preview
         modalPreviewText.textContent = textMessage;
@@ -1695,7 +1732,7 @@ _Briefing gerado via josuesantosia.com.br/briefing.html_`;
       // Ações do Modal
       btnReopenWhatsApp.addEventListener('click', function() {
         if (currentGeneratedUrl) {
-          window.open(currentGeneratedUrl, '_blank');
+          window.open(currentGeneratedUrl, '_blank', 'noopener,noreferrer');
         }
       });
 

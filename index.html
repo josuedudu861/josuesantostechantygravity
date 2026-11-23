@@ -6,6 +6,24 @@
   <title>Josué Santos // Estúdio de Criação com IA & Direção Humana</title>
   <meta name="description" content="Filmes, campanhas, avatares e experiências digitais geradas por inteligência artificial com acabamento e direção cinematográfica.">
   
+  <!-- Diretivas de Segurança & Proteção de Cabeçalho (OWASP Hardening) -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; media-src 'self' data: https: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me;">
+
+  <!-- Proteção Anti-Clickjacking (OWASP Defense) -->
+  <style id="antiClickjack">body{display:none !important;}</style>
+  <script>
+    if (self === top) {
+      var ac = document.getElementById("antiClickjack");
+      if (ac && ac.parentNode) ac.parentNode.removeChild(ac);
+    } else {
+      top.location = self.location;
+    }
+  </script>
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,7 +76,7 @@
         </div>
 
         <div class="header-side-right">
-          <a href="briefing.html" target="_blank" class="btn-pill btn-pill-outline header-cta" title="Preencher Briefing & Diagnóstico Estratégico">
+          <a href="briefing.html" target="_blank" rel="noopener noreferrer" class="btn-pill btn-pill-outline header-cta" title="Preencher Briefing & Diagnóstico Estratégico">
             <span>INICIAR PROJETO</span>
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -77,7 +95,7 @@
         
         <!-- Briefing Online Centralizado Logo Abaixo dos Menus -->
         <div class="header-briefing-subrow">
-          <a href="briefing.html" target="_blank" class="nav-link-briefing" title="Diagnóstico & Briefing Estratégico">
+          <a href="briefing.html" target="_blank" rel="noopener noreferrer" class="nav-link-briefing" title="Diagnóstico & Briefing Estratégico">
             <span class="briefing-pulse-dot"></span>
             <span class="nav-num">06</span> BRIEFING ONLINE ↗
           </a>
@@ -114,7 +132,7 @@
           </p>
 
           <div class="hero-cta-group">
-            <a href="briefing.html" target="_blank" class="btn-pill btn-pill-solid" title="Iniciar Briefing & Diagnóstico Online">
+            <a href="briefing.html" target="_blank" rel="noopener noreferrer" class="btn-pill btn-pill-solid" title="Iniciar Briefing & Diagnóstico Online">
               <span>INICIAR BRIEFING ONLINE</span>
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L7 2.5M11.5 7L7 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
@@ -542,11 +560,11 @@
             </div>
 
             <div class="director-channels">
-              <a href="https://instagram.com/josuesantostech" target="_blank" rel="noopener" class="channel-link">
+              <a href="https://instagram.com/josuesantostech" target="_blank" rel="noopener noreferrer" class="channel-link">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 <span>@josuesantostech</span>
               </a>
-              <a href="https://youtube.com/@JOSUESANTOSTECH" target="_blank" rel="noopener" class="channel-link">
+              <a href="https://youtube.com/@JOSUESANTOSTECH" target="_blank" rel="noopener noreferrer" class="channel-link">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
                 <span>YouTube Studio</span>
               </a>
@@ -614,6 +632,7 @@
             <div class="showcase-btn-wrap">
               <a href="briefing.html" 
                  target="_blank" 
+                 rel="noopener noreferrer"
                  class="btn-pill btn-pill-solid btn-super-cta-video"
                  title="Preencher Briefing Estratégico do Projeto">
                 <span>PREENCHER BRIEFING DO PROJETO</span>
@@ -754,14 +773,14 @@
             <div class="terminal-action-area">
               
               <div class="terminal-cta-buttons">
-                <a href="briefing.html" target="_blank" class="btn-pill btn-pill-solid btn-super-cta-video" title="Iniciar Diagnóstico e Briefing Completo">
+                <a href="briefing.html" target="_blank" rel="noopener noreferrer" class="btn-pill btn-pill-solid btn-super-cta-video" title="Iniciar Diagnóstico e Briefing Completo">
                   <span>PREENCHER BRIEFING COMPLETO</span>
                   <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5H12.5M12.5 7.5L8 3M12.5 7.5L8 12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </a>
 
                 <a href="https://wa.me/5561982116291?text=Ol%C3%A1%20Josu%C3%A9%21%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20r%C3%A1pida%20sobre%20um%20projeto." 
                    target="_blank" 
-                   rel="noopener" 
+                   rel="noopener noreferrer" 
                    class="btn-pill btn-pill-glass-whatsapp" 
                    title="Falar diretamente com Josué Santos via WhatsApp">
                   <span>FALAR DIRETO NO WHATSAPP</span>
@@ -821,7 +840,7 @@
       <div class="footer-center">
         <span class="footer-coords">LAT: -15.793889 // LONG: -47.882778</span>
         <span class="footer-status"><i class="status-indicator"></i> SISTEMA 100% OPERACIONAL</span>
-        <a href="briefing.html" target="_blank" class="footer-briefing-link">DIAGNÓSTICO & BRIEFING ONLINE ↗</a>
+        <a href="briefing.html" target="_blank" rel="noopener noreferrer" class="footer-briefing-link">DIAGNÓSTICO & BRIEFING ONLINE ↗</a>
       </div>
 
       <div class="footer-right">
