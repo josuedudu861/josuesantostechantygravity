@@ -1849,3 +1849,69 @@ button, input, select, textarea {
     gap: 6px;
   }
 }
+
+/* Links de Acesso ao Formulário de Briefing Externo */
+.nav-link-briefing {
+  color: #fff !important;
+  background: rgba(255, 42, 42, 0.12);
+  border: 1px solid rgba(255, 42, 42, 0.4);
+  border-radius: var(--radius-sm);
+  padding: 4px 10px;
+  box-shadow: 0 0 10px rgba(255, 42, 42, 0.2);
+  transition: var(--transition-fast);
+}
+
+.nav-link-briefing:hover {
+  background: var(--accent-red);
+  color: #fff !important;
+  border-color: var(--accent-red);
+  box-shadow: 0 0 16px var(--accent-red-glow);
+  transform: translateY(-1px);
+}
+
+.subnote-briefing-link {
+  color: var(--accent-red);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  margin-left: 6px;
+  transition: var(--transition-fast);
+}
+
+.subnote-briefing-link:hover {
+  color: #fff;
+  text-shadow: 0 0 8px var(--accent-red);
+}
+
+.terminal-briefing-highlight {
+  color: var(--accent-red);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 4px;
+  transition: var(--transition-fast);
+}
+
+.terminal-briefing-highlight:hover {
+  color: #fff;
+  text-shadow: 0 0 10px var(--accent-red);
+}
+
+.footer-briefing-link {
+  display: inline-block;
+  margin-top: 4px;
+  color: var(--accent-red);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255, 42, 42, 0.4);
+  padding-bottom: 2px;
+  transition: var(--transition-fast);
+}
+
+.footer-briefing-link:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}

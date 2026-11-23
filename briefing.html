@@ -68,6 +68,60 @@
       z-index: 100;
     }
 
+    /* Papel de Fundo Profissional com Logotipo Marca D'água High-Tech */
+    .bg-watermark-container {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bg-watermark-glow {
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 42, 42, 0.09) 0%, rgba(255, 170, 51, 0.03) 40%, transparent 70%);
+      filter: blur(90px);
+      transform: translate3d(0, 0, 0);
+    }
+
+    .bg-watermark-logo {
+      position: absolute;
+      top: 25%;
+      width: 75vw;
+      max-width: 900px;
+      opacity: 0.065;
+      filter: drop-shadow(0 0 60px rgba(255, 42, 42, 0.6));
+      transform: translateY(-50%) scale(1.05);
+      animation: floatLogoSubtle 14s ease-in-out infinite alternate;
+    }
+
+    .bg-watermark-logo-lower {
+      position: absolute;
+      bottom: 8%;
+      width: 65vw;
+      max-width: 780px;
+      opacity: 0.045;
+      filter: drop-shadow(0 0 50px rgba(255, 42, 42, 0.4));
+      animation: floatLogoSubtleRev 16s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatLogoSubtle {
+      0% { transform: translateY(-50%) scale(1.02); }
+      100% { transform: translateY(-46%) scale(1.06); }
+    }
+
+    @keyframes floatLogoSubtleRev {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(-5%) scale(1.04); }
+    }
+
     /* Header */
     .briefing-header {
       border-bottom: 1px solid var(--border-subtle);
@@ -141,6 +195,8 @@
       max-width: 860px;
       margin: 0 auto;
       padding: 40px 20px 80px;
+      position: relative;
+      z-index: 1;
     }
 
     /* Hero / Intro */
@@ -248,14 +304,29 @@
 
     /* Steps & Sections */
     .step-card {
-      background: var(--bg-card);
+      background: rgba(14, 14, 18, 0.78);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
       padding: 30px;
       margin-bottom: 24px;
       position: relative;
-      backdrop-filter: blur(14px);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       transition: var(--transition);
+      overflow: hidden;
+    }
+
+    .step-card::after {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 140px;
+      height: 140px;
+      background: url('assets/logo-red.png') no-repeat center;
+      background-size: contain;
+      opacity: 0.03;
+      pointer-events: none;
     }
 
     .step-card:focus-within {
@@ -685,6 +756,13 @@
 <body>
 
   <div class="top-glow-bar"></div>
+
+  <!-- Papel de Fundo com Logotipo Oficial Marca D'água High-Tech -->
+  <div class="bg-watermark-container" aria-hidden="true">
+    <div class="bg-watermark-glow"></div>
+    <img src="assets/logo-red.png" alt="" class="bg-watermark-logo">
+    <img src="assets/logo-red.png" alt="" class="bg-watermark-logo-lower">
+  </div>
 
   <!-- Header -->
   <header class="briefing-header">
